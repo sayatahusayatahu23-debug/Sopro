@@ -3,195 +3,143 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nihongo N5 - Examination</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nihongo N5 Examination</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#0b1511;color:#edf5ef;min-height:100vh}
-header{padding:22px 18px;background:#10251b;border-bottom:1px solid #284536}
-header h1{color:#9ce6b5;font-size:24px}
-header p{color:#9aafa2;font-size:13px;margin-top:6px}
-main{max-width:750px;margin:auto;padding:20px}
-.card{background:#13251c;border:1px solid #294435;border-radius:16px;padding:20px;margin-bottom:18px}
-h2{font-size:20px;margin-bottom:14px}
-input{width:100%;padding:14px;border-radius:9px;border:1px solid #42604d;background:#0b1710;color:white;font-size:16px;margin:10px 0}
-button{border:0;padding:13px 18px;border-radius:9px;background:#62c888;color:#092014;font-weight:bold;font-size:14px;cursor:pointer}
+body{background:#0b1510;color:#edf5ef;font-family:Arial,sans-serif}
+header{padding:22px;background:#14291d;border-bottom:1px solid #34513c}
+header h1{color:#9ce6b5}
+header p,.muted{color:#a6b9aa;font-size:13px;margin-top:7px;line-height:1.6}
+main{max-width:750px;margin:auto;padding:18px}
+.card{background:#14251b;border:1px solid #304b39;border-radius:15px;padding:20px;margin-bottom:16px}
+h2{margin-bottom:14px}
+input{width:100%;padding:14px;border-radius:9px;border:1px solid #45634c;background:#0b1710;color:white;font-size:16px;margin:12px 0}
+button{padding:13px 17px;border:0;border-radius:9px;background:#65cf8b;color:#092014;font-weight:bold;cursor:pointer}
 button:disabled{opacity:.5}
-button.secondary{background:#294536;color:white}
-button:active{transform:scale(.98)}
+.secondary{background:#304b39;color:white}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.category{background:#1c3826;color:white;border:1px solid #41654b;text-align:left;padding:17px;border-radius:12px}
+.category strong{display:block;font-size:18px;margin:8px 0}
+.symbol{font-size:28px;color:#9ce6b5}
 .hidden{display:none!important}
-.muted{color:#a9bbae;font-size:13px;line-height:1.6}
-.progress{height:7px;background:#263c2e;border-radius:10px;margin:14px 0;overflow:hidden}
-.progress div{height:100%;background:#62c888;width:0;transition:.2s}
-.option{display:block;padding:14px;border:1px solid #36513f;border-radius:10px;margin:10px 0;cursor:pointer}
-.option:has(input:checked){border-color:#62c888;background:#1b3b29}
-.option input{width:auto;margin-right:9px}
-.question{font-size:19px;line-height:1.6;margin:18px 0}
-.actions{display:flex;gap:10px;justify-content:space-between;margin-top:20px}
+.progress{height:7px;background:#304b39;border-radius:10px;margin:15px 0}
+.progress div{height:100%;background:#65cf8b;width:0;border-radius:10px}
+.question{font-size:22px;line-height:1.6;margin:22px 0}
+.option{display:block;border:1px solid #405c48;padding:14px;border-radius:9px;margin:9px 0;cursor:pointer}
+.option:has(input:checked){background:#20432d;border-color:#65cf8b}
+.option input{width:auto;margin:0 10px 0 0}
+.actions{display:flex;gap:10px;margin-top:20px}
 .actions button{flex:1}
-.stat{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}
-.stat div{background:#1c3325;padding:16px;border-radius:10px}
-.stat strong{display:block;font-size:25px;color:#9ce6b5;margin-top:5px}
-#message{margin-top:14px;line-height:1.6}
-.success{color:#8ce6aa}
-.error{color:#ff9b9b}
-#certificate{background:#fff;color:#163522;padding:28px;text-align:center;border-radius:12px}
-#certificate h2{font-size:25px}
-#certificate .score{font-size:42px;font-weight:bold;margin:18px}
-@media print{
- body{background:white;color:black}
- header,#intro,#exam,#result button,#result .muted{display:none!important}
- #result{display:block!important}
- #certificate{display:block!important;border:5px double #285c3b}
-}
+.stat{font-size:32px;color:#9ce6b5;margin:12px 0}
+#status{line-height:1.7;margin-top:15px}
+@media(max-width:430px){.grid{grid-template-columns:1fr 1fr}.card{padding:16px}}
 </style>
 </head>
 <body>
 
 <header>
- <h1>日本語 Nihongo N5</h1>
- <p>Japanese Language Examination · Level N5</p>
+<h1>日本語 NIHONGO N5</h1>
+<p>Japanese Language Examination</p>
 </header>
 
 <main>
-<section id="intro" class="card">
- <h2>Ujian Bahasa Jepang N5</h2>
- <p class="muted">
- Uji kemampuan bahasa Jepangmu melalui lima kategori ujian.
- Hasil akan dikoreksi otomatis dan dikirim ke Google Drive.
- </p>
- <br>
- <label>Nama peserta</label>
- <input id="studentName" placeholder="Masukkan nama lengkap">
- <div class="stat">
-  <div><span class="muted">Jumlah soal</span><strong>105</strong></div>
-  <div><span class="muted">Nilai kelulusan</span><strong>80</strong></div>
- </div>
- <p class="muted">
- Hiragana: 25 soal · Katakana: 25 soal · Kanji: 20 soal
- <br>Bunpou: 20 soal · Choukai: 15 soal
- </p>
- <br>
- <button onclick="startExam()">Mulai Ujian →</button>
+
+<section id="home" class="card">
+<h2>Selamat Datang</h2>
+<p class="muted">Masukkan nama peserta, kemudian pilih kategori ujian yang ingin dikerjakan.</p>
+<input id="studentName" placeholder="Nama lengkap peserta">
+
+<div class="grid">
+<button class="category" onclick="startExam('Hiragana')">
+<span class="symbol">あ</span>
+<strong>Hiragana</strong>
+25 soal
+</button>
+<button class="category" onclick="startExam('Katakana')">
+<span class="symbol">ア</span>
+<strong>Katakana</strong>
+25 soal
+</button>
+<button class="category" onclick="startExam('Kanji')">
+<span class="symbol">漢</span>
+<strong>Kanji</strong>
+20 soal
+</button>
+<button class="category" onclick="startExam('Bunpou')">
+<span class="symbol">文</span>
+<strong>Bunpou</strong>
+20 soal
+</button>
+<button class="category" onclick="startExam('Choukai')">
+<span class="symbol">聴</span>
+<strong>Choukai</strong>
+15 soal
+</button>
+</div>
+<p class="muted">Setiap kategori memiliki ujian dan PDF hasil masing-masing. Nilai kelulusan: 80.</p>
 </section>
 
 <section id="exam" class="card hidden">
- <div class="muted" id="category">Kategori</div>
- <div class="progress"><div id="progressBar"></div></div>
- <div class="muted" id="counter">Soal 1 / 105</div>
- <div class="question" id="question"></div>
- <div id="options"></div>
- <div class="actions">
-  <button class="secondary" onclick="previousQuestion()">Sebelumnya</button>
-  <button id="nextButton" onclick="nextQuestion()">Berikutnya</button>
- </div>
- <p class="muted" id="listenHint"></p>
+<p class="muted" id="categoryTitle"></p>
+<div class="progress"><div id="progressBar"></div></div>
+<p class="muted" id="counter"></p>
+<div class="question" id="question"></div>
+<div id="options"></div>
+<div id="audioArea"></div>
+<div class="actions">
+<button class="secondary" onclick="previousQuestion()">Kembali</button>
+<button id="nextButton" onclick="nextQuestion()">Berikutnya</button>
+</div>
 </section>
 
 <section id="result" class="card hidden">
- <h2>Hasil Ujian</h2>
- <div id="certificate">
-  <h2>日本語能力試験 N5</h2>
-  <p>HASIL UJIAN BAHASA JEPANG</p>
-  <br>
-  <p>Nama peserta:</p>
-  <h2 id="resultName"></h2>
-  <p>Nilai akhir</p>
-  <div class="score" id="finalScore">0</div>
-  <h2 id="passStatus"></h2>
-  <p id="resultDate"></p>
-  <br>
-  <p>日本語の勉強を頑張ってください。</p>
-  <p>Terus semangat belajar bahasa Jepang!</p>
- </div>
- <br>
- <div id="breakdown"></div>
- <p id="message" class="muted">Mengirim hasil ujian ke Google Drive...</p>
- <br>
- <button onclick="window.print()">Cetak hasil / Simpan PDF</button>
- <button class="secondary" onclick="location.reload()">Kembali</button>
+<h2>Hasil Ujian</h2>
+<p id="resultCategory" class="muted"></p>
+<div class="stat" id="score"></div>
+<h2 id="passStatus"></h2>
+<p id="resultName"></p>
+<p id="resultDate" class="muted"></p>
+<div id="breakdown" class="muted"></div>
+<p id="status"></p>
+<br>
+<button onclick="window.print()">Cetak Hasil</button>
+<button class="secondary" onclick="location.reload()">Kembali ke Menu</button>
 </section>
+
 </main>
 
 <script>
-const API_URL = "https://script.google.com/macros/s/AKfycbzwS2tgXZ_F53cb4sMJjSzx-i29Tzzmlg8G-Zwo8VepQREmer2jZxUY_Fexu7rPVxUD/exec";
+const API_URL="https://script.google.com/macros/s/AKfycbzwS2tgXZ_F53cb4sMJjSzx-i29Tzzmlg8G-Zwo8VepQREmer2jZxUY_Fexu7rPVxUD/exec";
 
-const bank = {
-"Hiragana":[
-["あ","a","i","u","e"],["い","i","a","o","u"],
-["う","u","e","a","o"],["え","e","i","u","a"],
-["お","o","a","i","u"],["か","ka","ki","ku","ke"],
-["き","ki","ka","ku","ko"],["く","ku","ke","ki","ka"],
-["け","ke","ko","ka","ku"],["こ","ko","ka","ki","ku"],
-["さ","sa","shi","su","se"],["し","shi","sa","su","so"],
-["す","su","se","shi","sa"],["せ","se","so","sa","su"],
-["そ","so","sa","shi","su"],["た","ta","chi","tsu","te"],
-["ち","chi","ta","tsu","to"],["つ","tsu","te","chi","ta"],
-["て","te","to","ta","tsu"],["と","to","ta","chi","tsu"],
-["な","na","ni","nu","ne"],["に","ni","na","nu","no"],
-["ぬ","nu","ne","ni","na"],["ね","ne","no","na","nu"],
-["の","no","na","ni","nu"]
+const bank={
+Hiragana:[
+["あ","a","i","u","e"],["い","i","a","o","u"],["う","u","e","a","o"],["え","e","i","u","a"],["お","o","a","i","u"],
+["か","ka","ki","ku","ke"],["き","ki","ka","ku","ko"],["く","ku","ke","ki","ka"],["け","ke","ko","ka","ku"],["こ","ko","ka","ki","ku"],
+["さ","sa","shi","su","se"],["し","shi","sa","su","so"],["す","su","se","shi","sa"],["せ","se","so","sa","su"],["そ","so","sa","shi","su"],
+["た","ta","chi","tsu","te"],["ち","chi","ta","tsu","to"],["つ","tsu","te","chi","ta"],["て","te","to","ta","tsu"],["と","to","ta","chi","tsu"],
+["な","na","ni","nu","ne"],["に","ni","na","nu","no"],["ぬ","nu","ne","ni","na"],["ね","ne","no","na","nu"],["の","no","na","ni","nu"]
 ],
-"Katakana":[
-["ア","a","i","u","e"],["イ","i","a","o","u"],
-["ウ","u","e","a","o"],["エ","e","i","u","a"],
-["オ","o","a","i","u"],["カ","ka","ki","ku","ke"],
-["キ","ki","ka","ku","ko"],["ク","ku","ke","ki","ka"],
-["ケ","ke","ko","ka","ku"],["コ","ko","ka","ki","ku"],
-["サ","sa","shi","su","se"],["シ","shi","sa","su","so"],
-["ス","su","se","shi","sa"],["セ","se","so","sa","su"],
-["ソ","so","sa","shi","su"],["タ","ta","chi","tsu","te"],
-["チ","chi","ta","tsu","to"],["ツ","tsu","te","chi","ta"],
-["テ","te","to","ta","tsu"],["ト","to","ta","chi","tsu"],
-["ナ","na","ni","nu","ne"],["ニ","ni","na","nu","no"],
-["ヌ","nu","ne","ni","na"],["ネ","ne","no","na","nu"],
-["ノ","no","na","ni","nu"]
+Katakana:[
+["ア","a","i","u","e"],["イ","i","a","o","u"],["ウ","u","e","a","o"],["エ","e","i","u","a"],["オ","o","a","i","u"],
+["カ","ka","ki","ku","ke"],["キ","ki","ka","ku","ko"],["ク","ku","ke","ki","ka"],["ケ","ke","ko","ka","ku"],["コ","ko","ka","ki","ku"],
+["サ","sa","shi","su","se"],["シ","shi","sa","su","so"],["ス","su","se","shi","sa"],["セ","se","so","sa","su"],["ソ","so","sa","shi","su"],
+["タ","ta","chi","tsu","te"],["チ","chi","ta","tsu","to"],["ツ","tsu","te","chi","ta"],["テ","te","to","ta","tsu"],["ト","to","ta","chi","tsu"],
+["ナ","na","ni","nu","ne"],["ニ","ni","na","nu","no"],["ヌ","nu","ne","ni","na"],["ネ","ne","no","na","nu"],["ノ","no","na","ni","nu"]
 ],
-"Kanji":[
-["山","やま","かわ","そら","うみ"],
-["川","かわ","やま","あめ","はな"],
-["水","みず","ひ","き","つち"],
-["火","ひ","みず","つき","やま"],
-["木","き","いし","みず","はな"],
-["人","ひと","いぬ","ねこ","とり"],
-["日","ひ","つき","やま","かわ"],
-["月","つき","ひ","ほし","そら"],
-["大","おおきい","ちいさい","ながい","みじかい"],
-["小","ちいさい","おおきい","たかい","やすい"],
-["上","うえ","した","まえ","うしろ"],
-["下","した","うえ","なか","そと"],
-["中","なか","そと","うえ","した"],
-["本","ほん","かみ","まど","くるま"],
-["車","くるま","でんしゃ","じてんしゃ","ひこうき"],
-["学校","がっこう","びょういん","ぎんこう","えき"],
-["先生","せんせい","がくせい","ともだち","かいしゃいん"],
-["学生","がくせい","せんせい","いしゃ","せんしゅ"],
-["電車","でんしゃ","じてんしゃ","くるま","ひこうき"],
-["名前","なまえ","じゅうしょ","でんわ","くに"]
+Kanji:[
+["山","やま","かわ","そら","うみ"],["川","かわ","やま","あめ","はな"],["水","みず","ひ","き","つち"],["火","ひ","みず","つき","やま"],["木","き","いし","みず","はな"],
+["人","ひと","いぬ","ねこ","とり"],["日","ひ","つき","やま","かわ"],["月","つき","ひ","ほし","そら"],["大","おおきい","ちいさい","ながい","みじかい"],["小","ちいさい","おおきい","たかい","やすい"],
+["上","うえ","した","まえ","うしろ"],["下","した","うえ","なか","そと"],["中","なか","そと","うえ","した"],["本","ほん","かみ","まど","くるま"],["車","くるま","でんしゃ","じてんしゃ","ひこうき"],
+["学校","がっこう","びょういん","ぎんこう","えき"],["先生","せんせい","がくせい","ともだち","かいしゃいん"],["学生","がくせい","せんせい","いしゃ","せんしゅ"],["電車","でんしゃ","じてんしゃ","くるま","ひこうき"],["名前","なまえ","じゅうしょ","でんわ","くに"]
 ],
-"Bunpou":[
-["私は学生___。","です","ます","ある","いる"],
-["毎日学校___行きます。","へ","を","が","で"],
-["水___飲みます。","を","に","へ","が"],
-["これは私___本です。","の","に","で","へ"],
-["昨日学校___行きました。","へ","を","が","の"],
-["猫___います。","が","を","へ","で"],
-["日本語___勉強します。","を","に","へ","が"],
-["七時___起きます。","に","を","で","が"],
-["友達___映画を見ます。","と","を","へ","の"],
-["学校___勉強します。","で","に","を","へ"],
-["昨日は暑く___。","なかったです","ありません","ないです","でしたない"],
-["これはおいしい___です。","食べ物","食べる","食べて","食べ"],
-["ご飯を食べて___。","ください","でした","ます","ある"],
-["日本へ行ったこと___あります。","が","を","へ","で"],
-["本を読む___が好きです。","こと","もの","ところ","ため"],
-["雨が降っています___、出かけません。","から","まで","しか","でも"],
-["学校へ行く___、友達に会います。","前に","あとで","ながら","だけ"],
-["ご飯を食べた___、勉強します。","あとで","前に","まで","から"],
-["これは私___かばんです。","の","を","に","で"],
-["日本語が上手に___たいです。","なり","する","ある","いる"]
+Bunpou:[
+["私は学生___。","です","ます","ある","いる"],["毎日学校___行きます。","へ","を","が","で"],["水___飲みます。","を","に","へ","が"],["これは私___本です。","の","に","で","へ"],["昨日学校___行きました。","へ","を","が","の"],
+["猫___います。","が","を","へ","で"],["日本語___勉強します。","を","に","へ","が"],["七時___起きます。","に","を","で","が"],["友達___映画を見ます。","と","を","へ","の"],["学校___勉強します。","で","に","を","へ"],
+["昨日は暑く___。","なかったです","ありません","ないです","でしたない"],["これはおいしい___です。","食べ物","食べる","食べて","食べ"],["ご飯を食べて___。","ください","でした","ます","ある"],["日本へ行ったこと___あります。","が","を","へ","で"],["本を読む___が好きです。","こと","もの","ところ","ため"],
+["雨が降っています___、出かけません。","から","まで","しか","でも"],["学校へ行く___、友達に会います。","前に","あとで","ながら","だけ"],["ご飯を食べた___、勉強します。","あとで","前に","まで","から"],["これは私___かばんです。","の","を","に","で"],["日本語が上手に___たいです。","なり","する","ある","いる"]
 ],
-"Choukai":[
+Choukai:[
 ["おはようございます。何時ですか。","午前七時です","午後七時です","午前九時です","午後九時です"],
 ["今日は何曜日ですか。月曜日です。","月曜日","火曜日","水曜日","木曜日"],
 ["これはいくらですか。100円です。","100円","200円","300円","500円"],
@@ -210,51 +158,52 @@ const bank = {
 ]
 };
 
-let questions=[],answers=[],index=0,finished=false;
-const categoryNames=Object.keys(bank);
+let currentCategory="";
+let questions=[];
+let answers=[];
+let index=0;
+let sending=false;
 
-function shuffle(arr){
- let a=[...arr];
+function shuffle(array){
+ const a=[...array];
  for(let i=a.length-1;i>0;i--){
-  let j=Math.floor(Math.random()*(i+1));
+  const j=Math.floor(Math.random()*(i+1));
   [a[i],a[j]]=[a[j],a[i]];
  }
  return a;
 }
 
-function startExam(){
+function startExam(category){
  const name=document.getElementById("studentName").value.trim();
- if(!name){alert("Masukkan nama terlebih dahulu.");return;}
- questions=[];
- categoryNames.forEach(category=>{
-  shuffle(bank[category]).forEach(q=>{
-   questions.push({
-    category,
-    question:q[0],
-    answer:q[1],
-    options:shuffle(q.slice(1))
-   });
-  });
- });
- // Jumlah soal bank saat ini 105.
+ if(!name){alert("Masukkan nama peserta dahulu.");return;}
+
+ currentCategory=category;
+ questions=shuffle(bank[category]).map(q=>({
+  question:q[0],
+  answer:q[1],
+  options:shuffle(q.slice(1))
+ }));
  answers=Array(questions.length).fill(null);
  index=0;
- document.getElementById("intro").classList.add("hidden");
+ sending=false;
+
+ document.getElementById("home").classList.add("hidden");
  document.getElementById("exam").classList.remove("hidden");
  showQuestion();
 }
 
 function showQuestion(){
  const q=questions[index];
- document.getElementById("category").textContent=q.category;
+ document.getElementById("categoryTitle").textContent=currentCategory;
  document.getElementById("counter").textContent=
-  `Soal ${index+1} / ${questions.length}`;
+  `Soal ${index+1} dari ${questions.length}`;
  document.getElementById("progressBar").style.width=
   ((index+1)/questions.length*100)+"%";
  document.getElementById("question").textContent=q.question;
 
- const options=document.getElementById("options");
- options.innerHTML="";
+ const area=document.getElementById("options");
+ area.innerHTML="";
+
  q.options.forEach(option=>{
   const label=document.createElement("label");
   label.className="option";
@@ -263,28 +212,28 @@ function showQuestion(){
   radio.name="answer";
   radio.value=option;
   radio.checked=answers[index]===option;
-  radio.addEventListener("change",()=>answers[index]=option);
-  label.appendChild(radio);
-  label.appendChild(document.createTextNode(option));
-  options.appendChild(label);
+  radio.onchange=()=>answers[index]=option;
+  label.append(radio,document.createTextNode(option));
+  area.appendChild(label);
  });
 
- const hint=document.getElementById("listenHint");
- hint.textContent="";
- if(q.category==="Choukai"){
-  const btn=document.createElement("button");
-  btn.className="secondary";
-  btn.textContent="🔊 Dengarkan audio";
-  btn.onclick=()=>speak(q.question);
-  hint.appendChild(btn);
+ const audioArea=document.getElementById("audioArea");
+ audioArea.innerHTML="";
+ if(currentCategory==="Choukai"){
+  const button=document.createElement("button");
+  button.className="secondary";
+  button.textContent="🔊 Dengarkan";
+  button.onclick=()=>speak(q.question);
+  audioArea.appendChild(button);
  }
+
  document.getElementById("nextButton").textContent=
-  index===questions.length-1?"Selesaikan Ujian":"Berikutnya";
+  index===questions.length-1?"Selesai Ujian":"Berikutnya";
 }
 
 function speak(text){
- if(!("speechSynthesis" in window)){
-  alert("Browser tidak mendukung audio.");
+ if(!window.speechSynthesis){
+  alert("Audio tidak didukung browser.");
   return;
  }
  speechSynthesis.cancel();
@@ -300,86 +249,76 @@ function previousQuestion(){
 
 function nextQuestion(){
  if(index<questions.length-1){
-  index++;showQuestion();
+  index++;
+  showQuestion();
  }else{
-  if(answers.includes(null)){
-   if(!confirm("Masih ada soal yang belum dijawab. Tetap selesaikan?"))return;
-  }
   finishExam();
  }
 }
 
 async function finishExam(){
- if(finished)return;
- finished=true;
+ if(sending)return;
+ sending=true;
 
+ const name=document.getElementById("studentName").value.trim();
  let correct=0;
- const categories={};
- const details=[];
-
- categoryNames.forEach(c=>{
-  categories[c]={correct:0,total:questions.filter(q=>q.category===c).length};
- });
-
- questions.forEach((q,i)=>{
+ const details=questions.map((q,i)=>{
   const isCorrect=answers[i]===q.answer;
-  if(isCorrect){
-   correct++;
-   categories[q.category].correct++;
-  }
-  details.push({
+  if(isCorrect)correct++;
+  return {
    question:q.question,
    answer:answers[i]||"Tidak dijawab",
    correct:q.answer,
    isCorrect
-  });
+  };
  });
 
- const score=Math.round(correct/questions.length*100);
+ const total=questions.length;
+ const score=Math.round(correct/total*100);
  const passed=score>=80;
- const name=document.getElementById("studentName").value.trim();
+
+ const data={
+  name:name,
+  category:currentCategory,
+  score:score,
+  total:total,
+  correct:correct,
+  status:passed?"LULUS":"BELUM LULUS",
+  categories:{
+   [currentCategory]:{correct:correct,total:total}
+  },
+  details:details
+ };
 
  document.getElementById("exam").classList.add("hidden");
  document.getElementById("result").classList.remove("hidden");
- document.getElementById("resultName").textContent=name;
- document.getElementById("finalScore").textContent=score;
+ document.getElementById("resultCategory").textContent=
+  "Kategori: "+currentCategory;
+ document.getElementById("score").textContent=score+"/100";
  document.getElementById("passStatus").textContent=
-  passed?"合格 - LULUS":"不合格 - BELUM LULUS";
+  passed?"LULUS":"BELUM LULUS";
  document.getElementById("passStatus").style.color=
-  passed?"#20834b":"#b33b3b";
+  passed?"#8ce6aa":"#ff9999";
+ document.getElementById("resultName").textContent="Nama: "+name;
  document.getElementById("resultDate").textContent=
   new Date().toLocaleString("id-ID");
+ document.getElementById("breakdown").textContent=
+  `Jawaban benar: ${correct} dari ${total} soal.`;
 
- let breakdown="<h2>Rincian Nilai</h2>";
- Object.keys(categories).forEach(c=>{
-  breakdown+=`<p>${c}: ${categories[c].correct}/${categories[c].total}</p>`;
- });
- document.getElementById("breakdown").innerHTML=breakdown;
-
- await sendResult({
-  name,
-  score,
-  total:questions.length,
-  correct,
-  status:passed?"LULUS":"BELUM LULUS",
-  categories,
-  details
- });
+ await sendResult(data);
 }
 
 async function sendResult(data){
- const message=document.getElementById("message");
+ const status=document.getElementById("status");
 
  if(!API_URL.startsWith("https://script.google.com/")){
-  message.innerHTML='<span class="error">URL Apps Script belum dipasang. Hasil belum terkirim.</span>';
+  status.textContent="URL Apps Script belum dipasang. Hasil belum dikirim.";
   return;
  }
 
- message.textContent="Sedang mengirim hasil ke Google Drive...";
+ status.textContent="Mengirim hasil ke Google Drive...";
 
  try{
-  // no-cors membuat browser tidak dapat membaca balasan server.
-  // Pengiriman ini tidak bisa memastikan file berhasil dibuat.
   await fetch(API_URL,{
    method:"POST",
    mode:"no-cors",
@@ -387,12 +326,11 @@ async function sendResult(data){
    body:JSON.stringify(data)
   });
 
-  message.innerHTML=
-   '<span class="success">Permintaan pengiriman sudah dikirim. Periksa folder Google Drive untuk memastikan PDF tersimpan.</span>';
+  status.textContent=
+   "Permintaan pengiriman sudah dikirim. Periksa folder Google Drive untuk memastikan PDF tersimpan.";
+
  }catch(error){
-  message.innerHTML=
-   '<span class="error">Pengiriman gagal. Periksa koneksi internet dan URL Apps Script.</span>';
-  finished=false;
+  status.textContent="Pengiriman gagal. Periksa koneksi dan URL Apps Script.";
  }
 }
 </script>
