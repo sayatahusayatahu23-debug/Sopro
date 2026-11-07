@@ -3,276 +3,398 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Nihongo N5 Examination</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nihongo N5 - Examination</title>
 <style>
-*{box-sizing:border-box}
-body{margin:0;background:#0c1511;color:#f1f5f2;font-family:Arial,sans-serif}
-header{padding:22px 7%;border-bottom:1px solid #294336}
-header b{color:#a5d9b0;font-size:21px}
-main{width:90%;max-width:1000px;margin:auto}
-.hero{padding:55px 0 25px}
-.hero small{color:#9bd5a8;letter-spacing:3px}
-h1{font-size:clamp(35px,7vw,60px);margin:15px 0}
-h1 span{color:#9bd5a8}
-p{color:#aabbb0;line-height:1.7}
-input{padding:14px;background:#17251d;border:1px solid #345340;color:white;border-radius:10px;width:100%;margin:12px 0}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:15px;margin:25px 0}
-.card,.box{background:#17251d;border:1px solid #345340;border-radius:16px;padding:22px}
-.symbol{font-size:35px;color:#9bd5a8}
-button{padding:13px 18px;border:0;border-radius:9px;background:#9bd5a8;color:#102016;font-weight:bold;cursor:pointer}
-button:hover{filter:brightness(1.1)}
-button.secondary{background:#27392e;color:white;border:1px solid #45634e}
-button:disabled{opacity:.4}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#0b1511;color:#edf5ef;min-height:100vh}
+header{padding:22px 18px;background:#10251b;border-bottom:1px solid #284536}
+header h1{color:#9ce6b5;font-size:24px}
+header p{color:#9aafa2;font-size:13px;margin-top:6px}
+main{max-width:750px;margin:auto;padding:20px}
+.card{background:#13251c;border:1px solid #294435;border-radius:16px;padding:20px;margin-bottom:18px}
+h2{font-size:20px;margin-bottom:14px}
+input{width:100%;padding:14px;border-radius:9px;border:1px solid #42604d;background:#0b1710;color:white;font-size:16px;margin:10px 0}
+button{border:0;padding:13px 18px;border-radius:9px;background:#62c888;color:#092014;font-weight:bold;font-size:14px;cursor:pointer}
+button:disabled{opacity:.5}
+button.secondary{background:#294536;color:white}
+button:active{transform:scale(.98)}
 .hidden{display:none!important}
-.box{margin:30px auto;max-width:750px}
-.topline{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
-.bar{height:7px;background:#304137;border-radius:20px;margin:20px 0}
-.bar div{height:100%;background:#9bd5a8;width:0;border-radius:20px}
-.question{font-size:29px;font-weight:bold;margin:35px 0 12px;line-height:1.5}
-.options{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:25px 0}
-.option{background:#213328;color:white;border:1px solid #405b49;text-align:left}
-.option.selected{border:2px solid #9bd5a8;background:#304a37}
-.actions{display:flex;justify-content:space-between;gap:10px;margin-top:25px;flex-wrap:wrap}
-.score{font-size:65px;color:#a5d9b0;font-weight:bold}
-.pass{color:#9bd5a8}.fail{color:#ff9999}
-.certificate{background:#f6f4e9;color:#24382a;padding:30px 15px;text-align:center;border:10px double #779579;margin:25px 0}
-.certificate h2{font-family:Georgia,serif;font-size:30px}
-.certificate .student{font-size:25px;font-weight:bold;border-bottom:1px solid #779579;padding:12px;display:inline-block}
-.certificate p{color:#46584b}
-footer{text-align:center;padding:30px;color:#7e9585}
-@media(max-width:550px){.options{grid-template-columns:1fr}.question{font-size:24px}}
+.muted{color:#a9bbae;font-size:13px;line-height:1.6}
+.progress{height:7px;background:#263c2e;border-radius:10px;margin:14px 0;overflow:hidden}
+.progress div{height:100%;background:#62c888;width:0;transition:.2s}
+.option{display:block;padding:14px;border:1px solid #36513f;border-radius:10px;margin:10px 0;cursor:pointer}
+.option:has(input:checked){border-color:#62c888;background:#1b3b29}
+.option input{width:auto;margin-right:9px}
+.question{font-size:19px;line-height:1.6;margin:18px 0}
+.actions{display:flex;gap:10px;justify-content:space-between;margin-top:20px}
+.actions button{flex:1}
+.stat{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}
+.stat div{background:#1c3325;padding:16px;border-radius:10px}
+.stat strong{display:block;font-size:25px;color:#9ce6b5;margin-top:5px}
+#message{margin-top:14px;line-height:1.6}
+.success{color:#8ce6aa}
+.error{color:#ff9b9b}
+#certificate{background:#fff;color:#163522;padding:28px;text-align:center;border-radius:12px}
+#certificate h2{font-size:25px}
+#certificate .score{font-size:42px;font-weight:bold;margin:18px}
 @media print{
-body{background:white;color:black}
-header,#home,#exam,.no-print,footer{display:none!important}
-#result{display:block!important}
-.box{border:0;margin:0;padding:0}
-.certificate{margin:10px auto}
+ body{background:white;color:black}
+ header,#intro,#exam,#result button,#result .muted{display:none!important}
+ #result{display:block!important}
+ #certificate{display:block!important;border:5px double #285c3b}
 }
 </style>
 </head>
 <body>
 
-<header><b>日本語 NIHONGO N5</b></header>
+<header>
+ <h1>日本語 Nihongo N5</h1>
+ <p>Japanese Language Examination · Level N5</p>
+</header>
 
 <main>
-<section id="home">
-<div class="hero">
-<small>JAPANESE LANGUAGE EXAMINATION</small>
-<h1>Learn Japanese.<br><span>Test Your Skills.</span></h1>
-<p>Uji kemampuan bahasa Jepang N5 kamu. Selesaikan ujian dan dapatkan sertifikat jika mencapai nilai minimal 80%.</p>
-
-<input id="student" placeholder="Nama lengkap peserta">
-
-</div>
-<div class="grid" id="examList"></div>
+<section id="intro" class="card">
+ <h2>Ujian Bahasa Jepang N5</h2>
+ <p class="muted">
+ Uji kemampuan bahasa Jepangmu melalui lima kategori ujian.
+ Hasil akan dikoreksi otomatis dan dikirim ke Google Drive.
+ </p>
+ <br>
+ <label>Nama peserta</label>
+ <input id="studentName" placeholder="Masukkan nama lengkap">
+ <div class="stat">
+  <div><span class="muted">Jumlah soal</span><strong>105</strong></div>
+  <div><span class="muted">Nilai kelulusan</span><strong>80</strong></div>
+ </div>
+ <p class="muted">
+ Hiragana: 25 soal · Katakana: 25 soal · Kanji: 20 soal
+ <br>Bunpou: 20 soal · Choukai: 15 soal
+ </p>
+ <br>
+ <button onclick="startExam()">Mulai Ujian →</button>
 </section>
 
-<section id="exam" class="box hidden">
-<div class="topline">
-<b id="examName"></b>
-<span id="counter"></span>
-</div>
-<div class="bar"><div id="progress"></div></div>
-<div id="audio"></div>
-<div class="question" id="question"></div>
-<div id="options" class="options"></div>
-<div class="actions">
-<button class="secondary" onclick="backHome()">Keluar</button>
-<button id="next" onclick="nextQuestion()">Selanjutnya →</button>
-</div>
+<section id="exam" class="card hidden">
+ <div class="muted" id="category">Kategori</div>
+ <div class="progress"><div id="progressBar"></div></div>
+ <div class="muted" id="counter">Soal 1 / 105</div>
+ <div class="question" id="question"></div>
+ <div id="options"></div>
+ <div class="actions">
+  <button class="secondary" onclick="previousQuestion()">Sebelumnya</button>
+  <button id="nextButton" onclick="nextQuestion()">Berikutnya</button>
+ </div>
+ <p class="muted" id="listenHint"></p>
 </section>
 
-<section id="result" class="box hidden">
-<h2>Hasil Ujian</h2>
-<div class="score" id="score"></div>
-<h3 id="status"></h3>
-<p id="detail"></p>
-<div id="certificate"></div>
-<div class="actions no-print">
-<button onclick="window.print()">Cetak Sertifikat / PDF</button>
-<button class="secondary" onclick="backHome()">Menu utama</button>
-</div>
-<p id="driveStatus"></p>
+<section id="result" class="card hidden">
+ <h2>Hasil Ujian</h2>
+ <div id="certificate">
+  <h2>日本語能力試験 N5</h2>
+  <p>HASIL UJIAN BAHASA JEPANG</p>
+  <br>
+  <p>Nama peserta:</p>
+  <h2 id="resultName"></h2>
+  <p>Nilai akhir</p>
+  <div class="score" id="finalScore">0</div>
+  <h2 id="passStatus"></h2>
+  <p id="resultDate"></p>
+  <br>
+  <p>日本語の勉強を頑張ってください。</p>
+  <p>Terus semangat belajar bahasa Jepang!</p>
+ </div>
+ <br>
+ <div id="breakdown"></div>
+ <p id="message" class="muted">Mengirim hasil ujian ke Google Drive...</p>
+ <br>
+ <button onclick="window.print()">Cetak hasil / Simpan PDF</button>
+ <button class="secondary" onclick="location.reload()">Kembali</button>
 </section>
 </main>
 
-<footer>NIHONGO N5 EXAMINATION SYSTEM</footer>
-
 <script>
-// GANTI DENGAN URL DEPLOYMENT GOOGLE APPS SCRIPT
-const API_URL="https://script.google.com/macros/s/AKfycbxpXqVHEkK1ijDmtsBl7vOL7gA3mqVEGbIG8a8C42q2VGQPJJqJL0tEw_rKbwa1E3uwHw/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbzwS2tgXZ_F53cb4sMJjSzx-i29Tzzmlg8G-Zwo8VepQREmer2jZxUY_Fexu7rPVxUD/exec";
 
-const PASS=80;
-
-const DB={
-hiragana:[
+const bank = {
+"Hiragana":[
 ["あ","a","i","u","e"],["い","i","a","o","u"],
-["う","u","a","e","i"],["え","e","a","i","o"],
-["お","o","u","a","e"],["か","ka","ki","ku","ke"],
-["き","ki","ka","ku","sa"],["く","ku","ko","ke","ki"],
-["け","ke","ka","ku","ko"],["こ","ko","ka","ki","ku"],
-["さ","sa","shi","su","se"],["し","shi","sa","chi","tsu"],
-["す","su","so","se","shi"],["せ","se","sa","su","so"],
-["そ","so","shi","su","sa"],["た","ta","chi","tsu","te"],
-["ち","chi","ta","tsu","to"],["つ","tsu","su","chi","te"],
-["て","te","ta","to","tsu"],["と","to","ta","chi","te"],
-["な","na","ni","nu","ne"],["に","ni","na","no","nu"],
-["ぬ","nu","ne","na","ni"],["ね","ne","no","nu","na"],
+["う","u","e","a","o"],["え","e","i","u","a"],
+["お","o","a","i","u"],["か","ka","ki","ku","ke"],
+["き","ki","ka","ku","ko"],["く","ku","ke","ki","ka"],
+["け","ke","ko","ka","ku"],["こ","ko","ka","ki","ku"],
+["さ","sa","shi","su","se"],["し","shi","sa","su","so"],
+["す","su","se","shi","sa"],["せ","se","so","sa","su"],
+["そ","so","sa","shi","su"],["た","ta","chi","tsu","te"],
+["ち","chi","ta","tsu","to"],["つ","tsu","te","chi","ta"],
+["て","te","to","ta","tsu"],["と","to","ta","chi","tsu"],
+["な","na","ni","nu","ne"],["に","ni","na","nu","no"],
+["ぬ","nu","ne","ni","na"],["ね","ne","no","na","nu"],
 ["の","no","na","ni","nu"]
 ],
-katakana:[
+"Katakana":[
 ["ア","a","i","u","e"],["イ","i","a","o","u"],
-["ウ","u","a","e","i"],["エ","e","a","i","o"],
-["オ","o","u","a","e"],["カ","ka","ki","ku","ke"],
-["キ","ki","ka","ku","sa"],["ク","ku","ko","ke","ki"],
-["ケ","ke","ka","ku","ko"],["コ","ko","ka","ki","ku"],
-["サ","sa","shi","su","se"],["シ","shi","sa","chi","tsu"],
-["ス","su","so","se","shi"],["セ","se","sa","su","so"],
-["ソ","so","shi","su","sa"],["タ","ta","chi","tsu","te"],
-["チ","chi","ta","tsu","to"],["ツ","tsu","su","chi","te"],
-["テ","te","ta","to","tsu"],["ト","to","ta","chi","te"],
-["ナ","na","ni","nu","ne"],["ニ","ni","na","no","nu"],
-["ヌ","nu","ne","na","ni"],["ネ","ne","no","nu","na"],
+["ウ","u","e","a","o"],["エ","e","i","u","a"],
+["オ","o","a","i","u"],["カ","ka","ki","ku","ke"],
+["キ","ki","ka","ku","ko"],["ク","ku","ke","ki","ka"],
+["ケ","ke","ko","ka","ku"],["コ","ko","ka","ki","ku"],
+["サ","sa","shi","su","se"],["シ","shi","sa","su","so"],
+["ス","su","se","shi","sa"],["セ","se","so","sa","su"],
+["ソ","so","sa","shi","su"],["タ","ta","chi","tsu","te"],
+["チ","chi","ta","tsu","to"],["ツ","tsu","te","chi","ta"],
+["テ","te","to","ta","tsu"],["ト","to","ta","chi","tsu"],
+["ナ","na","ni","nu","ne"],["ニ","ni","na","nu","no"],
+["ヌ","nu","ne","ni","na"],["ネ","ne","no","na","nu"],
 ["ノ","no","na","ni","nu"]
 ],
-kanji:[
-["山","やま (gunung)","かわ (sungai)","た (sawah)","そら (langit)"],
-["川","かわ (sungai)","やま (gunung)","うみ (laut)","あめ (hujan)"],
-["人","ひと (orang)","くち (mulut)","て (tangan)","め (mata)"],
-["日","ひ (matahari)","つき (bulan)","みず (air)","き (pohon)"],
-["月","つき (bulan)","ひ (matahari)","ほし (bintang)","そら (langit)"],
-["火","ひ (api)","みず (air)","き (pohon)","つち (tanah)"],
-["水","みず (air)","ひ (api)","かね (uang)","いし (batu)"],
-["木","き (pohon)","はな (bunga)","くさ (rumput)","やま (gunung)"],
-["金","かね (uang)","みず (air)","ひ (api)","つき (bulan)"],
-["土","つち (tanah)","そら (langit)","かわ (sungai)","あめ (hujan)"],
-["大","おおきい (besar)","ちいさい (kecil)","ながい (panjang)","たかい (tinggi)"],
-["小","ちいさい (kecil)","おおきい (besar)","あたらしい (baru)","ふるい (lama)"],
-["中","なか (dalam)","そと (luar)","うえ (atas)","した (bawah)"],
-["上","うえ (atas)","した (bawah)","なか (dalam)","みぎ (kanan)"],
-["下","した (bawah)","うえ (atas)","ひだり (kiri)","まえ (depan)"],
-["学校","がっこう (sekolah)","かいしゃ (perusahaan)","びょういん (rumah sakit)","えき (stasiun)"],
-["先生","せんせい (guru)","がくせい (murid)","ともだち (teman)","かぞく (keluarga)"],
-["学生","がくせい (pelajar)","せんせい (guru)","いしゃ (dokter)","かいしゃいん (pegawai)"],
-["電車","でんしゃ (kereta)","じてんしゃ (sepeda)","くるま (mobil)","ひこうき (pesawat)"],
-["本","ほん (buku)","みず (air)","かみ (kertas)","えんぴつ (pensil)"]
+"Kanji":[
+["山","やま","かわ","そら","うみ"],
+["川","かわ","やま","あめ","はな"],
+["水","みず","ひ","き","つち"],
+["火","ひ","みず","つき","やま"],
+["木","き","いし","みず","はな"],
+["人","ひと","いぬ","ねこ","とり"],
+["日","ひ","つき","やま","かわ"],
+["月","つき","ひ","ほし","そら"],
+["大","おおきい","ちいさい","ながい","みじかい"],
+["小","ちいさい","おおきい","たかい","やすい"],
+["上","うえ","した","まえ","うしろ"],
+["下","した","うえ","なか","そと"],
+["中","なか","そと","うえ","した"],
+["本","ほん","かみ","まど","くるま"],
+["車","くるま","でんしゃ","じてんしゃ","ひこうき"],
+["学校","がっこう","びょういん","ぎんこう","えき"],
+["先生","せんせい","がくせい","ともだち","かいしゃいん"],
+["学生","がくせい","せんせい","いしゃ","せんしゅ"],
+["電車","でんしゃ","じてんしゃ","くるま","ひこうき"],
+["名前","なまえ","じゅうしょ","でんわ","くに"]
 ],
-bunpou:[
-["わたし ___ インドネシア人です。","は","を","に","で"],
-["毎朝 6時 ___ 起きます。","に","を","で","へ"],
-["学校 ___ 日本語を勉強します。","で","に","を","が"],
-["水 ___ 飲みます。","を","は","で","へ"],
-["友だち ___ 映画を見ます。","と","を","が","で"],
-["日本 ___ 行きたいです。","へ","を","で","が"],
-["これは わたし ___ 本です。","の","を","に","で"],
-["きのう 勉強し ___。","ました","ます","ません","ましょう"],
-["ここで写真を撮ってもいいです ___。","か","ね","を","が"],
-["日曜日は学校へ ___。","行きません","行きますか","行きましたを","行くです"],
-["食べる ___、手を洗います。","前に","後でに","ながらに","たいに"],
-["宿題をした ___、テレビを見ます。","後で","前で","時にを","までに"],
-["雨が降っています ___、出かけません。","から","まで","だけ","しか"],
-["日本語はおもしろい ___思います。","と","を","に","で"],
-["昨日、友だち ___会いました。","に","を","で","へ"],
-["このりんごは ___です。","おいしい","おいしく","おいしさ","おいしかったを"],
-["富士山は ___山です。","高い","高く","高さ","高かったを"],
-["日本へ行ったことが ___。","あります","います","します","なります"],
-["ここでたばこを吸っては ___。","いけません","いいです","あります","ください"],
-["毎日勉強し ___なります。","て","た","ない","ます"]
+"Bunpou":[
+["私は学生___。","です","ます","ある","いる"],
+["毎日学校___行きます。","へ","を","が","で"],
+["水___飲みます。","を","に","へ","が"],
+["これは私___本です。","の","に","で","へ"],
+["昨日学校___行きました。","へ","を","が","の"],
+["猫___います。","が","を","へ","で"],
+["日本語___勉強します。","を","に","へ","が"],
+["七時___起きます。","に","を","で","が"],
+["友達___映画を見ます。","と","を","へ","の"],
+["学校___勉強します。","で","に","を","へ"],
+["昨日は暑く___。","なかったです","ありません","ないです","でしたない"],
+["これはおいしい___です。","食べ物","食べる","食べて","食べ"],
+["ご飯を食べて___。","ください","でした","ます","ある"],
+["日本へ行ったこと___あります。","が","を","へ","で"],
+["本を読む___が好きです。","こと","もの","ところ","ため"],
+["雨が降っています___、出かけません。","から","まで","しか","でも"],
+["学校へ行く___、友達に会います。","前に","あとで","ながら","だけ"],
+["ご飯を食べた___、勉強します。","あとで","前に","まで","から"],
+["これは私___かばんです。","の","を","に","で"],
+["日本語が上手に___たいです。","なり","する","ある","いる"]
 ],
-choukai:[
-["おはようございます。","Selamat pagi","Selamat malam","Terima kasih","Selamat tinggal"],
-["ありがとうございます。","Terima kasih","Maaf","Sama-sama","Selamat pagi"],
-["わたしは学生です。","Saya pelajar","Saya guru","Saya dokter","Saya pegawai"],
-["これは何ですか。","Ini apa?","Siapa itu?","Di mana stasiun?","Berapa harganya?"],
-["トイレはどこですか。","Toilet di mana?","Rumah siapa?","Ini apa?","Jam berapa?"],
-["水をください。","Tolong beri saya air","Saya minum teh","Air itu dingin","Saya tidak mau air"],
-["駅まで歩きます。","Saya berjalan sampai stasiun","Saya naik kereta","Saya pergi ke sekolah","Saya pulang"],
-["今日は暑いですね。","Hari ini panas ya","Hari ini dingin ya","Besok hujan","Kemarin menyenangkan"],
-["毎日日本語を勉強します。","Saya belajar bahasa Jepang setiap hari","Saya mengajar setiap hari","Saya belajar bahasa Inggris","Saya tidak belajar"],
-["日曜日に映画を見ます。","Saya menonton film hari Minggu","Saya bekerja hari Minggu","Saya membaca buku","Saya pergi hari Senin"],
-["これはいくらですか。","Ini harganya berapa?","Ini punya siapa?","Ini kapan?","Ini di mana?"],
-["バスで学校へ行きます。","Saya pergi ke sekolah naik bus","Saya pergi naik kereta","Saya berjalan ke sekolah","Saya pulang naik bus"],
-["もう昼ご飯を食べました。","Saya sudah makan siang","Saya belum sarapan","Saya akan makan malam","Saya sedang memasak"],
-["少し待ってください。","Tolong tunggu sebentar","Tolong datang besok","Tolong bicara pelan","Tolong duduk"],
-["誕生日は三月二十八日です。","Ulang tahun 28 Maret","Ulang tahun 3 Agustus","Hari ini 28 Maret","Saya lahir bulan Mei"]
+"Choukai":[
+["おはようございます。何時ですか。","午前七時です","午後七時です","午前九時です","午後九時です"],
+["今日は何曜日ですか。月曜日です。","月曜日","火曜日","水曜日","木曜日"],
+["これはいくらですか。100円です。","100円","200円","300円","500円"],
+["どこへ行きますか。学校へ行きます。","学校","病院","銀行","駅"],
+["何を食べますか。パンを食べます。","パン","ご飯","魚","肉"],
+["何時に寝ますか。十時に寝ます。","十時","九時","八時","七時"],
+["誰と行きますか。友達と行きます。","友達","先生","母","父"],
+["何で行きますか。バスで行きます。","バス","電車","車","自転車"],
+["今日は暑いですか。いいえ、寒いです。","寒いです","暑いです","暖かいです","涼しいです"],
+["何を買いましたか。本を買いました。","本","水","服","靴"],
+["どこで食べますか。レストランです。","レストラン","学校","家","駅"],
+["何人ですか。三人です。","三人","二人","四人","五人"],
+["いつ行きますか。明日行きます。","明日","今日","昨日","来週"],
+["何をしますか。日本語を勉強します。","日本語を勉強します","寝ます","遊びます","働きます"],
+["何時からですか。九時からです。","九時","八時","十時","七時"]
 ]
 };
 
-const TYPES=[
-["hiragana","あ","Hiragana",25],
-["katakana","ア","Katakana",25],
-["kanji","漢","Kanji",20],
-["bunpou","文","Bunpou",20],
-["choukai","耳","Choukai",15]
-];
-let type="",list=[],pos=0,answers=[],name="";
-const $=id=>document.getElementById(id);
-function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
-function renderMenu(){
-$("examList").innerHTML=TYPES.map(t=>`
-<div class="card">
-<div class="symbol">${t[1]}</div><h3>${t[2]}</h3>
-<p>${t[3]} soal pilihan ganda. Urutan soal dan pilihan jawaban diacak.</p>
-<div class="meta">${t[3]} SOAL · MINIMAL 80%</div>
-<button onclick="start('${t[0]}')">Mulai ujian →</button>
-</div>`).join("");
+let questions=[],answers=[],index=0,finished=false;
+const categoryNames=Object.keys(bank);
+
+function shuffle(arr){
+ let a=[...arr];
+ for(let i=a.length-1;i>0;i--){
+  let j=Math.floor(Math.random()*(i+1));
+  [a[i],a[j]]=[a[j],a[i]];
+ }
+ return a;
 }
-function start(k){
-name=$("student").value.trim();
-if(!name){alert("Masukkan nama lengkap terlebih dahulu.");$("student").focus();return}
-type=k;
-list=shuffle(DB[k]).map(q=>({q:q[0],a:q[1],opts:shuffle(q.slice(1))}));
-pos=0;answers=Array(list.length).fill(null);
-$("home").classList.add("hidden");$("result").classList.add("hidden");$("exam").classList.remove("hidden");
-$("examName").textContent=TYPES.find(t=>t[0]===k)[2];
-show();
-window.scrollTo(0,0);
+
+function startExam(){
+ const name=document.getElementById("studentName").value.trim();
+ if(!name){alert("Masukkan nama terlebih dahulu.");return;}
+ questions=[];
+ categoryNames.forEach(category=>{
+  shuffle(bank[category]).forEach(q=>{
+   questions.push({
+    category,
+    question:q[0],
+    answer:q[1],
+    options:shuffle(q.slice(1))
+   });
+  });
+ });
+ // Jumlah soal bank saat ini 105.
+ answers=Array(questions.length).fill(null);
+ index=0;
+ document.getElementById("intro").classList.add("hidden");
+ document.getElementById("exam").classList.remove("hidden");
+ showQuestion();
 }
-function show(){
-let q=list[pos];
-$("counter").textContent=`Soal ${pos+1} / ${list.length}`;
-$("progress").style.width=((pos+1)/list.length*100)+"%";
-$("question").textContent=q.q;
-$("audio").innerHTML=type==="choukai"?`<div class="listen">🔊 Dengarkan kalimat Jepang <button onclick="speak()">Putar audio</button></div>`:"";
-$("options").innerHTML=q.opts.map(o=>`<button class="option ${answers[pos]===o?"selected":""}" onclick="choose(${JSON.stringify(o).replace(/"/g,'&quot;')})">${o}</button>`).join("");
-$("next").textContent=pos===list.length-1?"Selesaikan ujian":"Selanjutnya →";
-if(type==="choukai")setTimeout(speak,250);
+
+function showQuestion(){
+ const q=questions[index];
+ document.getElementById("category").textContent=q.category;
+ document.getElementById("counter").textContent=
+  `Soal ${index+1} / ${questions.length}`;
+ document.getElementById("progressBar").style.width=
+  ((index+1)/questions.length*100)+"%";
+ document.getElementById("question").textContent=q.question;
+
+ const options=document.getElementById("options");
+ options.innerHTML="";
+ q.options.forEach(option=>{
+  const label=document.createElement("label");
+  label.className="option";
+  const radio=document.createElement("input");
+  radio.type="radio";
+  radio.name="answer";
+  radio.value=option;
+  radio.checked=answers[index]===option;
+  radio.addEventListener("change",()=>answers[index]=option);
+  label.appendChild(radio);
+  label.appendChild(document.createTextNode(option));
+  options.appendChild(label);
+ });
+
+ const hint=document.getElementById("listenHint");
+ hint.textContent="";
+ if(q.category==="Choukai"){
+  const btn=document.createElement("button");
+  btn.className="secondary";
+  btn.textContent="🔊 Dengarkan audio";
+  btn.onclick=()=>speak(q.question);
+  hint.appendChild(btn);
+ }
+ document.getElementById("nextButton").textContent=
+  index===questions.length-1?"Selesaikan Ujian":"Berikutnya";
 }
-function choose(o){answers[pos]=o;show()}
-function speak(){if(!window.speechSynthesis)return; speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(list[pos].q);u.lang="ja-JP";u.rate=.82;speechSynthesis.speak(u)}
+
+function speak(text){
+ if(!("speechSynthesis" in window)){
+  alert("Browser tidak mendukung audio.");
+  return;
+ }
+ speechSynthesis.cancel();
+ const utterance=new SpeechSynthesisUtterance(text);
+ utterance.lang="ja-JP";
+ utterance.rate=.85;
+ speechSynthesis.speak(utterance);
+}
+
+function previousQuestion(){
+ if(index>0){index--;showQuestion();}
+}
+
 function nextQuestion(){
-if(answers[pos]===null){alert("Pilih jawaban terlebih dahulu.");return}
-if(pos<list.length-1){pos++;show()}else finish()
+ if(index<questions.length-1){
+  index++;showQuestion();
+ }else{
+  if(answers.includes(null)){
+   if(!confirm("Masih ada soal yang belum dijawab. Tetap selesaikan?"))return;
+  }
+  finishExam();
+ }
 }
-function finish(){
-let correct=list.filter((q,i)=>answers[i]===q.a).length;
-let score=Math.round(correct/list.length*100),passed=score>=80;
-let result={studentName:name,exam:TYPES.find(t=>t[0]===type)[2],correct,total:list.length,score,passed,date:new Date().toISOString(),certificateIssued:passed};
-$("exam").classList.add("hidden");$("result").classList.remove("hidden");
-$("score").textContent=score+"%";
-$("status").textContent=passed?"🎉 SELAMAT, KAMU LULUS!":"Belum lulus. Tetap semangat!";
-$("status").className=passed?"pass":"fail";
-$("detail").textContent=`Jawaban benar ${correct} dari ${list.length}. Batas kelulusan 80%.`;
-$("certificate").innerHTML=passed?certificate(result):"";
-sendResult(result);
-window.scrollTo(0,0);
+
+async function finishExam(){
+ if(finished)return;
+ finished=true;
+
+ let correct=0;
+ const categories={};
+ const details=[];
+
+ categoryNames.forEach(c=>{
+  categories[c]={correct:0,total:questions.filter(q=>q.category===c).length};
+ });
+
+ questions.forEach((q,i)=>{
+  const isCorrect=answers[i]===q.answer;
+  if(isCorrect){
+   correct++;
+   categories[q.category].correct++;
+  }
+  details.push({
+   question:q.question,
+   answer:answers[i]||"Tidak dijawab",
+   correct:q.answer,
+   isCorrect
+  });
+ });
+
+ const score=Math.round(correct/questions.length*100);
+ const passed=score>=80;
+ const name=document.getElementById("studentName").value.trim();
+
+ document.getElementById("exam").classList.add("hidden");
+ document.getElementById("result").classList.remove("hidden");
+ document.getElementById("resultName").textContent=name;
+ document.getElementById("finalScore").textContent=score;
+ document.getElementById("passStatus").textContent=
+  passed?"合格 - LULUS":"不合格 - BELUM LULUS";
+ document.getElementById("passStatus").style.color=
+  passed?"#20834b":"#b33b3b";
+ document.getElementById("resultDate").textContent=
+  new Date().toLocaleString("id-ID");
+
+ let breakdown="<h2>Rincian Nilai</h2>";
+ Object.keys(categories).forEach(c=>{
+  breakdown+=`<p>${c}: ${categories[c].correct}/${categories[c].total}</p>`;
+ });
+ document.getElementById("breakdown").innerHTML=breakdown;
+
+ await sendResult({
+  name,
+  score,
+  total:questions.length,
+  correct,
+  status:passed?"LULUS":"BELUM LULUS",
+  categories,
+  details
+ });
 }
-function certificate(r){
-let date=new Date(r.date).toLocaleDateString("id-ID",{day:"numeric",month:"long",year:"numeric"});
-return `<div class="certificate" id="cert"><div>日本語 NIHONGO N5</div><h2>SERTIFIKAT KELULUSAN</h2><p>Diberikan kepada</p><div class="student">${safe(name)}</div><p>Telah menyelesaikan ujian <b>${r.exam}</b><br>dengan nilai <b>${r.score}%</b> dan dinyatakan <b>LULUS</b>.</p><p>Indonesia, ${date}</p><div class="cert-stamp">合格 · GOUKAKU</div><p style="font-size:11px">Sertifikat latihan mandiri Nihongo N5</p></div>`;
+
+async function sendResult(data){
+ const message=document.getElementById("message");
+
+ if(!API_URL.startsWith("https://script.google.com/")){
+  message.innerHTML='<span class="error">URL Apps Script belum dipasang. Hasil belum terkirim.</span>';
+  return;
+ }
+
+ message.textContent="Sedang mengirim hasil ke Google Drive...";
+
+ try{
+  // no-cors membuat browser tidak dapat membaca balasan server.
+  // Pengiriman ini tidak bisa memastikan file berhasil dibuat.
+  await fetch(API_URL,{
+   method:"POST",
+   mode:"no-cors",
+   headers:{"Content-Type":"text/plain;charset=utf-8"},
+   body:JSON.stringify(data)
+  });
+
+  message.innerHTML=
+   '<span class="success">Permintaan pengiriman sudah dikirim. Periksa folder Google Drive untuk memastikan PDF tersimpan.</span>';
+ }catch(error){
+  message.innerHTML=
+   '<span class="error">Pengiriman gagal. Periksa koneksi internet dan URL Apps Script.</span>';
+  finished=false;
+ }
 }
-function safe(s){return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
-async function sendResult(r){
-$("driveStatus").textContent="Mengirim riwayat ke Google Drive...";
-if(!API_URL||API_URL.includes("PASTE_URL")){$("driveStatus").textContent="URL Apps Script belum dipasang. Hasil ujian tetap ditampilkan.";return}
-try{
-await fetch(API_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({...r,answers:list.map((q,i)=>({question:q.q,answer:answers[i],correctAnswer:q.a,isCorrect:answers[i]===q.a}))})});
-$("driveStatus").textContent="Riwayat ujian telah dikirim. Silakan periksa Google Sheets/Drive.";
-}catch(e){$("driveStatus").textContent="Pengiriman gagal. Periksa koneksi dan URL Apps Script."}
-}
-function backHome(){if(window.speechSynthesis)speechSynthesis.cancel();$("exam").classList.add("hidden");$("result").classList.add("hidden");$("home").classList.remove("hidden");window.scrollTo(0,0)}
-renderMenu();
 </script>
 </body>
 </html>
