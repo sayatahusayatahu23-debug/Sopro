@@ -1,0 +1,1244 @@
+{
+  "categories": [
+    {
+      "id": "particles",
+      "title": "Partikel & Pola Dasar",
+      "subtitle": "は・も・の・です・じゃありません",
+      "description": "Lengkapi kalimat bahasa Jepang dengan partikel atau pola yang tepat.",
+      "questions": [
+        {
+          "id": "particles-01",
+          "question": "わたし ___ インドネシアじんです。",
+          "options": [
+            "は",
+            "が",
+            "を",
+            "に"
+          ],
+          "answer": 0,
+          "explanation": "は (wa) menandai topik kalimat."
+        },
+        {
+          "id": "particles-02",
+          "question": "わたしも がくせいです。 artinya ...",
+          "options": [
+            "Saya bukan pelajar.",
+            "Saya seorang guru.",
+            "Saya di sekolah.",
+            "Saya juga pelajar."
+          ],
+          "answer": 3,
+          "explanation": "も berarti “juga”."
+        },
+        {
+          "id": "particles-03",
+          "question": "これは わたし ___ ほんです。",
+          "options": [
+            "を",
+            "で",
+            "の",
+            "は"
+          ],
+          "answer": 2,
+          "explanation": "の menghubungkan kepemilikan: わたしのほん = buku saya."
+        },
+        {
+          "id": "particles-04",
+          "question": "わたしは がくせい ___。",
+          "options": [
+            "ません",
+            "です",
+            "ます",
+            "でしたか"
+          ],
+          "answer": 1,
+          "explanation": "です adalah bentuk sopan “adalah”."
+        },
+        {
+          "id": "particles-05",
+          "question": "わたしは せんせい ___。(bentuk negatif dari desu)",
+          "options": [
+            "じゃありません",
+            "です",
+            "でした",
+            "ます"
+          ],
+          "answer": 0,
+          "explanation": "じゃありません menyatakan “bukan” dalam bentuk sopan."
+        },
+        {
+          "id": "particles-06",
+          "question": "「わたし ___ いきます」— Saya juga pergi.",
+          "options": [
+            "の",
+            "を",
+            "へ",
+            "も"
+          ],
+          "answer": 3,
+          "explanation": "も menggantikan は untuk menyatakan “juga”."
+        },
+        {
+          "id": "particles-07",
+          "question": "これは だれ ___ かばんですか。",
+          "options": [
+            "は",
+            "を",
+            "の",
+            "も"
+          ],
+          "answer": 2,
+          "explanation": "だれの = milik siapa."
+        },
+        {
+          "id": "particles-08",
+          "question": "「これはペンです」 partikel は dibaca ...",
+          "options": [
+            "he",
+            "wa",
+            "ha",
+            "hi"
+          ],
+          "answer": 1,
+          "explanation": "は sebagai partikel topik dibaca wa."
+        },
+        {
+          "id": "particles-09",
+          "question": "わたし ___ がくせいです。",
+          "options": [
+            "は",
+            "を",
+            "の",
+            "で"
+          ],
+          "answer": 0,
+          "explanation": "は menandai topik: “Kalau saya, pelajar”."
+        },
+        {
+          "id": "particles-10",
+          "question": "「わたしは にほんじんじゃありません」 artinya ...",
+          "options": [
+            "Saya orang Jepang.",
+            "Saya juga orang Jepang.",
+            "Apakah saya orang Jepang?",
+            "Saya bukan orang Jepang."
+          ],
+          "answer": 3,
+          "explanation": "じゃありません berarti bukan."
+        },
+        {
+          "id": "particles-11",
+          "question": "これは にほんご ___ ほんです。",
+          "options": [
+            "は",
+            "へ",
+            "の",
+            "も"
+          ],
+          "answer": 2,
+          "explanation": "にほんごのほん = buku bahasa Jepang."
+        },
+        {
+          "id": "particles-12",
+          "question": "「たなかさんも がくせいです」 kata も berarti ...",
+          "options": [
+            "di",
+            "juga",
+            "bukan",
+            "dari"
+          ],
+          "answer": 1,
+          "explanation": "も menyatakan kesamaan atau tambahan."
+        },
+        {
+          "id": "particles-13",
+          "question": "わたしは いしゃ ___。 (Saya bukan dokter.)",
+          "options": [
+            "じゃありません",
+            "です",
+            "でした",
+            "あります"
+          ],
+          "answer": 0,
+          "explanation": "Gunakan じゃありません untuk menyangkal kata benda."
+        },
+        {
+          "id": "particles-14",
+          "question": "「これは わたしのです」 artinya ...",
+          "options": [
+            "Ini bukan saya.",
+            "Saya juga di sini.",
+            "Ini buku Jepang.",
+            "Ini milik saya."
+          ],
+          "answer": 3,
+          "explanation": "の dapat menggantikan kata benda yang sudah diketahui."
+        },
+        {
+          "id": "particles-15",
+          "question": "「がくせいです」 bentuk negatif sopannya adalah ...",
+          "options": [
+            "がくせいの",
+            "がくせいは",
+            "がくせいじゃありません",
+            "がくせいも"
+          ],
+          "answer": 2,
+          "explanation": "じゃありません adalah bentuk negatif kata benda."
+        },
+        {
+          "id": "particles-16",
+          "question": "「わたしは 18さいです」 partikel は menunjukkan ...",
+          "options": [
+            "arah tujuan",
+            "topik",
+            "objek langsung",
+            "alat"
+          ],
+          "answer": 1,
+          "explanation": "は memperkenalkan topik pembicaraan."
+        },
+        {
+          "id": "particles-17",
+          "question": "「これは だれの ほんですか」 berarti ...",
+          "options": [
+            "Ini buku siapa?",
+            "Di mana buku ini?",
+            "Apakah ini buku?",
+            "Buku ini berapa?"
+          ],
+          "answer": 0,
+          "explanation": "だれの menanyakan kepemilikan."
+        },
+        {
+          "id": "particles-18",
+          "question": "Pilih kalimat “Saya juga orang Indonesia”.",
+          "options": [
+            "わたしの インドネシアじんです。",
+            "わたしを インドネシアじんです。",
+            "わたしへ インドネシアじんです。",
+            "わたしも インドネシアじんです。"
+          ],
+          "answer": 3,
+          "explanation": "も berarti juga."
+        },
+        {
+          "id": "particles-19",
+          "question": "Pilih kalimat “Ini bukan kamus”.",
+          "options": [
+            "これは じしょの。",
+            "これは じしょも。",
+            "これは じしょじゃありません。",
+            "これは じしょです。"
+          ],
+          "answer": 2,
+          "explanation": "じゃありません menegasikan kata benda."
+        },
+        {
+          "id": "particles-20",
+          "question": "「にほんごのせんせい」 berarti ...",
+          "options": [
+            "Orang Jepang",
+            "Guru bahasa Jepang",
+            "Murid bahasa Jepang",
+            "Buku bahasa Jepang"
+          ],
+          "answer": 1,
+          "explanation": "の menghubungkan dua kata benda."
+        }
+      ]
+    },
+    {
+      "id": "kore-sore-are",
+      "title": "Kore・Sore・Are",
+      "subtitle": "これ・それ・あれ・どれ",
+      "description": "Uji pemahaman kata tunjuk benda dalam bahasa Jepang.",
+      "questions": [
+        {
+          "id": "kore-sore-are-01",
+          "question": "これ berarti ...",
+          "options": [
+            "Ini",
+            "Itu (dekat lawan bicara)",
+            "Itu (jauh dari keduanya)",
+            "Yang mana"
+          ],
+          "answer": 0,
+          "explanation": "これ menunjuk benda dekat pembicara."
+        },
+        {
+          "id": "kore-sore-are-02",
+          "question": "それ berarti ...",
+          "options": [
+            "Ini dekat pembicara",
+            "Itu jauh dari keduanya",
+            "Siapa",
+            "Itu dekat lawan bicara"
+          ],
+          "answer": 3,
+          "explanation": "それ menunjuk benda dekat lawan bicara."
+        },
+        {
+          "id": "kore-sore-are-03",
+          "question": "あれ berarti ...",
+          "options": [
+            "Itu dekat lawan bicara",
+            "Di mana",
+            "Itu jauh dari pembicara dan lawan bicara",
+            "Ini"
+          ],
+          "answer": 2,
+          "explanation": "あれ menunjuk benda yang jauh dari keduanya."
+        },
+        {
+          "id": "kore-sore-are-04",
+          "question": "どれ berarti ...",
+          "options": [
+            "Siapa",
+            "Yang mana",
+            "Ini",
+            "Itu"
+          ],
+          "answer": 1,
+          "explanation": "どれ digunakan untuk menanyakan pilihan benda."
+        },
+        {
+          "id": "kore-sore-are-05",
+          "question": "Benda ada di tanganmu (pembicara). Pilih kata tunjuk.",
+          "options": [
+            "これ",
+            "それ",
+            "あれ",
+            "どれ"
+          ],
+          "answer": 0,
+          "explanation": "Benda dekat pembicara disebut これ."
+        },
+        {
+          "id": "kore-sore-are-06",
+          "question": "Benda berada dekat teman bicaramu.",
+          "options": [
+            "これ",
+            "あれ",
+            "どれ",
+            "それ"
+          ],
+          "answer": 3,
+          "explanation": "Benda dekat lawan bicara disebut それ."
+        },
+        {
+          "id": "kore-sore-are-07",
+          "question": "Benda terlihat jauh dari kalian berdua.",
+          "options": [
+            "それ",
+            "どれ",
+            "あれ",
+            "これ"
+          ],
+          "answer": 2,
+          "explanation": "Benda jauh dari kedua orang disebut あれ."
+        },
+        {
+          "id": "kore-sore-are-08",
+          "question": "「これは なんですか」 artinya ...",
+          "options": [
+            "Di mana ini?",
+            "Ini apa?",
+            "Itu siapa?",
+            "Yang mana?"
+          ],
+          "answer": 1,
+          "explanation": "なんですか berarti apa?"
+        },
+        {
+          "id": "kore-sore-are-09",
+          "question": "「それは ほんです」 artinya ...",
+          "options": [
+            "Itu buku.",
+            "Ini buku.",
+            "Itu pensil.",
+            "Buku siapa?"
+          ],
+          "answer": 0,
+          "explanation": "それ = itu dekat lawan bicara."
+        },
+        {
+          "id": "kore-sore-are-10",
+          "question": "「あれは がっこうです」 artinya ...",
+          "options": [
+            "Ini sekolah.",
+            "Itu tas.",
+            "Sekolah di mana?",
+            "Itu (di sana) sekolah."
+          ],
+          "answer": 3,
+          "explanation": "あれ menunjuk sesuatu yang jauh."
+        },
+        {
+          "id": "kore-sore-are-11",
+          "question": "Kata tunjuk untuk “yang mana” (benda) adalah ...",
+          "options": [
+            "どこ",
+            "なに",
+            "どれ",
+            "だれ"
+          ],
+          "answer": 2,
+          "explanation": "どれ menanyakan pilihan benda."
+        },
+        {
+          "id": "kore-sore-are-12",
+          "question": "「これは わたしの かばんです」 artinya ...",
+          "options": [
+            "Tas itu di mana?",
+            "Ini tas saya.",
+            "Itu tas saya.",
+            "Ini tas teman saya."
+          ],
+          "answer": 1,
+          "explanation": "これ = ini; わたしの = milik saya."
+        },
+        {
+          "id": "kore-sore-are-13",
+          "question": "Jika ingin bertanya “Itu apa?” sambil menunjuk dekat teman:",
+          "options": [
+            "それは なんですか。",
+            "これは なんですか。",
+            "あれは なんですか。",
+            "どれは なんですか。"
+          ],
+          "answer": 0,
+          "explanation": "それ sesuai untuk benda dekat lawan bicara."
+        },
+        {
+          "id": "kore-sore-are-14",
+          "question": "Pilih pasangan yang benar untuk benda jauh di sana.",
+          "options": [
+            "これ",
+            "それ",
+            "この",
+            "あれ"
+          ],
+          "answer": 3,
+          "explanation": "あれ dipakai untuk benda jauh."
+        },
+        {
+          "id": "kore-sore-are-15",
+          "question": "「どれが あなたの ほんですか」 berarti ...",
+          "options": [
+            "Ini buku siapa?",
+            "Apakah kamu membaca?",
+            "Yang mana buku kamu?",
+            "Buku kamu di mana?"
+          ],
+          "answer": 2,
+          "explanation": "どれが menanyakan yang mana."
+        },
+        {
+          "id": "kore-sore-are-16",
+          "question": "Bentuk “ini” yang langsung diikuti kata benda adalah ...",
+          "options": [
+            "こちら",
+            "この",
+            "これ",
+            "ここ"
+          ],
+          "answer": 1,
+          "explanation": "この harus diikuti kata benda: このほん."
+        },
+        {
+          "id": "kore-sore-are-17",
+          "question": "「その ひと」 berarti ...",
+          "options": [
+            "Orang itu (dekat lawan bicara)",
+            "Orang ini",
+            "Orang jauh di sana",
+            "Siapa orang itu?"
+          ],
+          "answer": 0,
+          "explanation": "その menerangkan kata benda dekat lawan bicara."
+        },
+        {
+          "id": "kore-sore-are-18",
+          "question": "「あの くるま」 berarti ...",
+          "options": [
+            "Mobil ini",
+            "Mobil dekat kamu",
+            "Mobil yang mana",
+            "Mobil yang di sana"
+          ],
+          "answer": 3,
+          "explanation": "あの + kata benda menunjuk sesuatu yang jauh."
+        },
+        {
+          "id": "kore-sore-are-19",
+          "question": "Manakah yang merupakan kata tunjuk tempat “di sini”?",
+          "options": [
+            "この",
+            "どれ",
+            "ここ",
+            "これ"
+          ],
+          "answer": 2,
+          "explanation": "ここ berarti di sini; これ berarti ini (benda)."
+        },
+        {
+          "id": "kore-sore-are-20",
+          "question": "Manakah urutan yang tepat: ini / itu dekat kamu / itu jauh?",
+          "options": [
+            "これ・あれ・それ",
+            "これ・それ・あれ",
+            "それ・これ・あれ",
+            "あれ・それ・これ"
+          ],
+          "answer": 1,
+          "explanation": "Urutannya: これ, それ, あれ."
+        }
+      ]
+    },
+    {
+      "id": "kanji",
+      "title": "Tebak Arti Kanji",
+      "subtitle": "漢字の意味",
+      "description": "Pilih arti bahasa Indonesia dari kanji yang ditampilkan.",
+      "questions": [
+        {
+          "id": "kanji-01",
+          "question": "山",
+          "options": [
+            "Gunung",
+            "Sungai",
+            "Laut",
+            "Pohon"
+          ],
+          "answer": 0,
+          "explanation": "山 berarti gunung."
+        },
+        {
+          "id": "kanji-02",
+          "question": "川",
+          "options": [
+            "Gunung",
+            "Api",
+            "Bulan",
+            "Sungai"
+          ],
+          "answer": 3,
+          "explanation": "川 berarti sungai."
+        },
+        {
+          "id": "kanji-03",
+          "question": "水",
+          "options": [
+            "Tanah",
+            "Angin",
+            "Air",
+            "Api"
+          ],
+          "answer": 2,
+          "explanation": "水 berarti air."
+        },
+        {
+          "id": "kanji-04",
+          "question": "火",
+          "options": [
+            "Batu",
+            "Api",
+            "Air",
+            "Kayu"
+          ],
+          "answer": 1,
+          "explanation": "火 berarti api."
+        },
+        {
+          "id": "kanji-05",
+          "question": "木",
+          "options": [
+            "Pohon / kayu",
+            "Bulan",
+            "Matahari",
+            "Hujan"
+          ],
+          "answer": 0,
+          "explanation": "木 berarti pohon atau kayu."
+        },
+        {
+          "id": "kanji-06",
+          "question": "日",
+          "options": [
+            "Bulan",
+            "Tahun",
+            "Waktu",
+            "Matahari / hari"
+          ],
+          "answer": 3,
+          "explanation": "日 berarti matahari atau hari."
+        },
+        {
+          "id": "kanji-07",
+          "question": "月",
+          "options": [
+            "Bintang",
+            "Langit",
+            "Bulan",
+            "Matahari"
+          ],
+          "answer": 2,
+          "explanation": "月 berarti bulan."
+        },
+        {
+          "id": "kanji-08",
+          "question": "人",
+          "options": [
+            "Teman",
+            "Orang",
+            "Anak",
+            "Perempuan"
+          ],
+          "answer": 1,
+          "explanation": "人 berarti orang."
+        },
+        {
+          "id": "kanji-09",
+          "question": "口",
+          "options": [
+            "Mulut",
+            "Mata",
+            "Telinga",
+            "Tangan"
+          ],
+          "answer": 0,
+          "explanation": "口 berarti mulut."
+        },
+        {
+          "id": "kanji-10",
+          "question": "目",
+          "options": [
+            "Mulut",
+            "Kaki",
+            "Hidung",
+            "Mata"
+          ],
+          "answer": 3,
+          "explanation": "目 berarti mata."
+        },
+        {
+          "id": "kanji-11",
+          "question": "耳",
+          "options": [
+            "Mulut",
+            "Kepala",
+            "Telinga",
+            "Mata"
+          ],
+          "answer": 2,
+          "explanation": "耳 berarti telinga."
+        },
+        {
+          "id": "kanji-12",
+          "question": "手",
+          "options": [
+            "Bahu",
+            "Tangan",
+            "Kaki",
+            "Mata"
+          ],
+          "answer": 1,
+          "explanation": "手 berarti tangan."
+        },
+        {
+          "id": "kanji-13",
+          "question": "足",
+          "options": [
+            "Kaki",
+            "Tangan",
+            "Badan",
+            "Kepala"
+          ],
+          "answer": 0,
+          "explanation": "足 berarti kaki."
+        },
+        {
+          "id": "kanji-14",
+          "question": "大",
+          "options": [
+            "Kecil",
+            "Banyak",
+            "Sedikit",
+            "Besar"
+          ],
+          "answer": 3,
+          "explanation": "大 berarti besar."
+        },
+        {
+          "id": "kanji-15",
+          "question": "小",
+          "options": [
+            "Panjang",
+            "Pendek",
+            "Kecil",
+            "Besar"
+          ],
+          "answer": 2,
+          "explanation": "小 berarti kecil."
+        },
+        {
+          "id": "kanji-16",
+          "question": "中",
+          "options": [
+            "Bawah",
+            "Dalam / tengah",
+            "Luar",
+            "Atas"
+          ],
+          "answer": 1,
+          "explanation": "中 berarti tengah atau dalam."
+        },
+        {
+          "id": "kanji-17",
+          "question": "上",
+          "options": [
+            "Atas",
+            "Bawah",
+            "Kiri",
+            "Kanan"
+          ],
+          "answer": 0,
+          "explanation": "上 berarti atas."
+        },
+        {
+          "id": "kanji-18",
+          "question": "下",
+          "options": [
+            "Atas",
+            "Depan",
+            "Belakang",
+            "Bawah"
+          ],
+          "answer": 3,
+          "explanation": "下 berarti bawah."
+        },
+        {
+          "id": "kanji-19",
+          "question": "友",
+          "options": [
+            "Siswa",
+            "Keluarga",
+            "Teman",
+            "Guru"
+          ],
+          "answer": 2,
+          "explanation": "友 berarti teman."
+        },
+        {
+          "id": "kanji-20",
+          "question": "学",
+          "options": [
+            "Menulis",
+            "Belajar",
+            "Mengajar",
+            "Membaca"
+          ],
+          "answer": 1,
+          "explanation": "学 berkaitan dengan belajar atau ilmu."
+        }
+      ]
+    },
+    {
+      "id": "hiragana",
+      "title": "Tebak Hiragana",
+      "subtitle": "ひらがな",
+      "description": "Pilih huruf hiragana yang sesuai dengan romaji.",
+      "questions": [
+        {
+          "id": "hiragana-01",
+          "question": "Romaji: a",
+          "options": [
+            "あ",
+            "お",
+            "う",
+            "え"
+          ],
+          "answer": 0,
+          "explanation": "あ dibaca a."
+        },
+        {
+          "id": "hiragana-02",
+          "question": "Romaji: i",
+          "options": [
+            "え",
+            "あ",
+            "お",
+            "い"
+          ],
+          "answer": 3,
+          "explanation": "い dibaca i."
+        },
+        {
+          "id": "hiragana-03",
+          "question": "Romaji: u",
+          "options": [
+            "お",
+            "あ",
+            "う",
+            "い"
+          ],
+          "answer": 2,
+          "explanation": "う dibaca u."
+        },
+        {
+          "id": "hiragana-04",
+          "question": "Romaji: e",
+          "options": [
+            "う",
+            "え",
+            "あ",
+            "い"
+          ],
+          "answer": 1,
+          "explanation": "え dibaca e."
+        },
+        {
+          "id": "hiragana-05",
+          "question": "Romaji: o",
+          "options": [
+            "お",
+            "う",
+            "え",
+            "あ"
+          ],
+          "answer": 0,
+          "explanation": "お dibaca o."
+        },
+        {
+          "id": "hiragana-06",
+          "question": "Romaji: ka",
+          "options": [
+            "き",
+            "く",
+            "け",
+            "か"
+          ],
+          "answer": 3,
+          "explanation": "か dibaca ka."
+        },
+        {
+          "id": "hiragana-07",
+          "question": "Romaji: ki",
+          "options": [
+            "か",
+            "こ",
+            "き",
+            "さ"
+          ],
+          "answer": 2,
+          "explanation": "き dibaca ki."
+        },
+        {
+          "id": "hiragana-08",
+          "question": "Romaji: ku",
+          "options": [
+            "き",
+            "く",
+            "け",
+            "こ"
+          ],
+          "answer": 1,
+          "explanation": "く dibaca ku."
+        },
+        {
+          "id": "hiragana-09",
+          "question": "Romaji: ke",
+          "options": [
+            "け",
+            "こ",
+            "か",
+            "く"
+          ],
+          "answer": 0,
+          "explanation": "け dibaca ke."
+        },
+        {
+          "id": "hiragana-10",
+          "question": "Romaji: ko",
+          "options": [
+            "く",
+            "き",
+            "け",
+            "こ"
+          ],
+          "answer": 3,
+          "explanation": "こ dibaca ko."
+        },
+        {
+          "id": "hiragana-11",
+          "question": "Romaji: sa",
+          "options": [
+            "き",
+            "す",
+            "さ",
+            "ち"
+          ],
+          "answer": 2,
+          "explanation": "さ dibaca sa."
+        },
+        {
+          "id": "hiragana-12",
+          "question": "Romaji: shi",
+          "options": [
+            "さ",
+            "し",
+            "つ",
+            "ち"
+          ],
+          "answer": 1,
+          "explanation": "し dibaca shi."
+        },
+        {
+          "id": "hiragana-13",
+          "question": "Romaji: su",
+          "options": [
+            "す",
+            "さ",
+            "せ",
+            "そ"
+          ],
+          "answer": 0,
+          "explanation": "す dibaca su."
+        },
+        {
+          "id": "hiragana-14",
+          "question": "Romaji: ta",
+          "options": [
+            "な",
+            "ち",
+            "て",
+            "た"
+          ],
+          "answer": 3,
+          "explanation": "た dibaca ta."
+        },
+        {
+          "id": "hiragana-15",
+          "question": "Romaji: chi",
+          "options": [
+            "つ",
+            "し",
+            "ち",
+            "さ"
+          ],
+          "answer": 2,
+          "explanation": "ち dibaca chi."
+        },
+        {
+          "id": "hiragana-16",
+          "question": "Romaji: tsu",
+          "options": [
+            "て",
+            "つ",
+            "し",
+            "ち"
+          ],
+          "answer": 1,
+          "explanation": "つ dibaca tsu."
+        },
+        {
+          "id": "hiragana-17",
+          "question": "Romaji: na",
+          "options": [
+            "な",
+            "に",
+            "ね",
+            "ぬ"
+          ],
+          "answer": 0,
+          "explanation": "な dibaca na."
+        },
+        {
+          "id": "hiragana-18",
+          "question": "Romaji: ni",
+          "options": [
+            "ぬ",
+            "な",
+            "ね",
+            "に"
+          ],
+          "answer": 3,
+          "explanation": "に dibaca ni."
+        },
+        {
+          "id": "hiragana-19",
+          "question": "Romaji: ha",
+          "options": [
+            "ひ",
+            "へ",
+            "は",
+            "ほ"
+          ],
+          "answer": 2,
+          "explanation": "は dibaca ha sebagai huruf biasa."
+        },
+        {
+          "id": "hiragana-20",
+          "question": "Romaji: ma",
+          "options": [
+            "も",
+            "ま",
+            "み",
+            "む"
+          ],
+          "answer": 1,
+          "explanation": "ま dibaca ma."
+        }
+      ]
+    },
+    {
+      "id": "katakana",
+      "title": "Tebak Katakana",
+      "subtitle": "カタカナ",
+      "description": "Pilih huruf katakana yang sesuai dengan romaji.",
+      "questions": [
+        {
+          "id": "katakana-01",
+          "question": "Romaji: a",
+          "options": [
+            "ア",
+            "オ",
+            "ウ",
+            "エ"
+          ],
+          "answer": 0,
+          "explanation": "ア dibaca a."
+        },
+        {
+          "id": "katakana-02",
+          "question": "Romaji: i",
+          "options": [
+            "エ",
+            "ア",
+            "オ",
+            "イ"
+          ],
+          "answer": 3,
+          "explanation": "イ dibaca i."
+        },
+        {
+          "id": "katakana-03",
+          "question": "Romaji: u",
+          "options": [
+            "オ",
+            "ア",
+            "ウ",
+            "イ"
+          ],
+          "answer": 2,
+          "explanation": "ウ dibaca u."
+        },
+        {
+          "id": "katakana-04",
+          "question": "Romaji: e",
+          "options": [
+            "ウ",
+            "エ",
+            "ア",
+            "イ"
+          ],
+          "answer": 1,
+          "explanation": "エ dibaca e."
+        },
+        {
+          "id": "katakana-05",
+          "question": "Romaji: o",
+          "options": [
+            "オ",
+            "ウ",
+            "エ",
+            "ア"
+          ],
+          "answer": 0,
+          "explanation": "オ dibaca o."
+        },
+        {
+          "id": "katakana-06",
+          "question": "Romaji: ka",
+          "options": [
+            "キ",
+            "ク",
+            "ケ",
+            "カ"
+          ],
+          "answer": 3,
+          "explanation": "カ dibaca ka."
+        },
+        {
+          "id": "katakana-07",
+          "question": "Romaji: ki",
+          "options": [
+            "カ",
+            "コ",
+            "キ",
+            "サ"
+          ],
+          "answer": 2,
+          "explanation": "キ dibaca ki."
+        },
+        {
+          "id": "katakana-08",
+          "question": "Romaji: ku",
+          "options": [
+            "キ",
+            "ク",
+            "ケ",
+            "コ"
+          ],
+          "answer": 1,
+          "explanation": "ク dibaca ku."
+        },
+        {
+          "id": "katakana-09",
+          "question": "Romaji: ke",
+          "options": [
+            "ケ",
+            "コ",
+            "カ",
+            "ク"
+          ],
+          "answer": 0,
+          "explanation": "ケ dibaca ke."
+        },
+        {
+          "id": "katakana-10",
+          "question": "Romaji: ko",
+          "options": [
+            "ク",
+            "キ",
+            "ケ",
+            "コ"
+          ],
+          "answer": 3,
+          "explanation": "コ dibaca ko."
+        },
+        {
+          "id": "katakana-11",
+          "question": "Romaji: sa",
+          "options": [
+            "キ",
+            "ス",
+            "サ",
+            "チ"
+          ],
+          "answer": 2,
+          "explanation": "サ dibaca sa."
+        },
+        {
+          "id": "katakana-12",
+          "question": "Romaji: shi",
+          "options": [
+            "サ",
+            "シ",
+            "ツ",
+            "チ"
+          ],
+          "answer": 1,
+          "explanation": "シ dibaca shi."
+        },
+        {
+          "id": "katakana-13",
+          "question": "Romaji: su",
+          "options": [
+            "ス",
+            "サ",
+            "セ",
+            "ソ"
+          ],
+          "answer": 0,
+          "explanation": "ス dibaca su."
+        },
+        {
+          "id": "katakana-14",
+          "question": "Romaji: ta",
+          "options": [
+            "ナ",
+            "チ",
+            "テ",
+            "タ"
+          ],
+          "answer": 3,
+          "explanation": "タ dibaca ta."
+        },
+        {
+          "id": "katakana-15",
+          "question": "Romaji: chi",
+          "options": [
+            "ツ",
+            "シ",
+            "チ",
+            "サ"
+          ],
+          "answer": 2,
+          "explanation": "チ dibaca chi."
+        },
+        {
+          "id": "katakana-16",
+          "question": "Romaji: tsu",
+          "options": [
+            "テ",
+            "ツ",
+            "シ",
+            "チ"
+          ],
+          "answer": 1,
+          "explanation": "ツ dibaca tsu."
+        },
+        {
+          "id": "katakana-17",
+          "question": "Romaji: na",
+          "options": [
+            "ナ",
+            "ニ",
+            "ネ",
+            "ヌ"
+          ],
+          "answer": 0,
+          "explanation": "ナ dibaca na."
+        },
+        {
+          "id": "katakana-18",
+          "question": "Romaji: ni",
+          "options": [
+            "ヌ",
+            "ナ",
+            "ネ",
+            "ニ"
+          ],
+          "answer": 3,
+          "explanation": "ニ dibaca ni."
+        },
+        {
+          "id": "katakana-19",
+          "question": "Romaji: ha",
+          "options": [
+            "ヒ",
+            "ヘ",
+            "ハ",
+            "ホ"
+          ],
+          "answer": 2,
+          "explanation": "ハ dibaca ha."
+        },
+        {
+          "id": "katakana-20",
+          "question": "Romaji: ma",
+          "options": [
+            "モ",
+            "マ",
+            "ミ",
+            "ム"
+          ],
+          "answer": 1,
+          "explanation": "マ dibaca ma."
+        }
+      ]
+    }
+  ]
+}

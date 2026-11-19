@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080808">
+<title>Loginkomo</title>
+
+<style>
+:root {
+  --ink: #f5f5f5;
+  --muted: #888;
+  --line: #292929;
+  --field: #151515;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background:
+    radial-gradient(ellipse at 50% 0%, #202020, transparent 55%),
+    #080808;
+  color: var(--ink);
+}
+
+/* LOGIN CONTAINER */
+
+.container {
+  width: 100%;
+  max-width: 450px;
+  padding: 38px 30px;
+  border: 1px solid #292929;
+  border-radius: 27px;
+  background: rgba(18,18,18,.96);
+  box-shadow: 0 20px 60px rgba(0,0,0,.5);
+  position: relative;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border: 1px solid #252525;
+  border-radius: 21px;
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+/* LOGO */
+
+.logo-area {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.logo {
+  width: 75px;
+  height: 75px;
+  border-radius: 23px;
+  border: 1px solid #333;
+  background: #202020;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  box-shadow: 0 8px 25px #0005;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.logo span {
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+
+/* HEADER */
+
+h1 {
+  text-align: center;
+  font-size: 32px;
+  margin: 0 0 10px;
+  letter-spacing: -1px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #888;
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 35px;
+}
+
+.jp {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #eee;
+  line-height: 1.5;
+}
+
+rt {
+  font-size: 9px;
+  color: #888;
+  font-weight: normal;
+}
+
+.idn {
+  display: block;
+  font-size: 11px;
+  color: #888;
+  margin-top: 3px;
+  font-weight: normal;
+}
+
+/* INPUT */
+
+.field {
+  margin-bottom: 17px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.input-wrap {
+  height: 60px;
+  border: 1px solid #303030;
+  background: var(--field);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  gap: 12px;
+  transition: .25s;
+}
+
+.input-wrap:focus-within {
+  background: #1b1b1b;
+  border-color: #777;
+  box-shadow: 0 0 0 4px #ffffff08;
+}
+
+.input-wrap svg {
+  width: 21px;
+  height: 21px;
+  color: #888;
+  flex-shrink: 0;
+}
+
+input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+  color: white;
+}
+
+input::placeholder {
+  color: #666;
+}
+
+.eye {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #aaa;
+  font-size: 17px;
+}
+
+/* BUTTON */
+
+.info {
+  text-align: right;
+  font-size: 11px;
+  color: #777;
+  margin: 0 2px 24px;
+}
+
+.login-btn {
+  width: 100%;
+  min-height: 62px;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  background: #f2f2f2;
+  color: #111;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: .2s;
+  box-shadow: 0 8px 18px #0005;
+}
+
+.login-btn:hover {
+  background: #d8d8d8;
+  transform: translateY(-2px);
+}
+
+.login-btn:active {
+  transform: scale(.98);
+}
+
+.login-btn:disabled {
+  opacity: .6;
+  cursor: wait;
+}
+
+.login-btn .jp {
+  color: #111;
+}
+
+.login-btn .idn {
+  color: #555;
+}
+
+/* MESSAGE */
+
+.message {
+  display: none;
+  margin-top: 15px;
+  padding: 13px;
+  border-radius: 12px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.message.error {
+  display: block;
+  color: #ff9999;
+  background: #251515;
+  border: 1px solid #492525;
+  animation: shake .3s;
+}
+
+.message.success {
+  display: block;
+  color: #a5e0b5;
+  background: #142117;
+  border: 1px solid #284a30;
+}
+
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+/* FOOTER */
+
+.footer {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: #666;
+}
+
+.footer small {
+  display: block;
+  margin-top: 7px;
+  letter-spacing: 0;
+  font-size: 10px;
+}
+
+/* WELCOME POPUP */
+
+.welcome-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0,0,0,.85);
+  backdrop-filter: blur(12px);
+  opacity: 0;
+  visibility: hidden;
+  transition: .4s ease;
+}
+
+.welcome-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.welcome-popup {
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+  overflow: hidden;
+  border-radius: 22px;
+  background: #111;
+  border: 1px solid #333;
+  box-shadow: 0 25px 80px #0009;
+  transform: translateY(20px) scale(.97);
+  transition: .4s ease;
+}
+
+.welcome-overlay.active .welcome-popup {
+  transform: translateY(0) scale(1);
+}
+
+.welcome-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #111;
+}
+
+.welcome-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 35px 20px 18px;
+  color: white;
+  background: linear-gradient(transparent,rgba(0,0,0,.9));
+  pointer-events: none;
+}
+
+.welcome-info h2 {
+  margin: 0;
+  font-size: 23px;
+  letter-spacing: 1px;
+}
+
+.welcome-info p {
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: #ddd;
+}
+
+.welcome-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 35px;
+  height: 35px;
+  border: 1px solid #ffffff55;
+  border-radius: 50%;
+  background: #0009;
+  color: white;
+  font-size: 19px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.welcome-timer {
+  height: 3px;
+  background: #ffffff35;
+}
+
+.welcome-progress {
+  width: 100%;
+  height: 100%;
+  background: white;
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+@media(max-width:480px) {
+  .container {
+    padding: 32px 23px;
+  }
+
+  h1 {
+    font-size: 29px;
+  }
+
+  .welcome-popup {
+    border-radius: 17px;
+  }
+
+  .welcome-info h2 {
+    font-size: 19px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- WELCOME VIDEO POPUP -->
+
+<div class="welcome-overlay active" id="welcomeOverlay">
+
+  <div class="welcome-popup">
+
+    <button class="welcome-close" id="welcomeClose">
+      ×
+    </button>
+
+    <video
+      class="welcome-video"
+      id="welcomeVideo"
+      autoplay
+      muted
+      playsinline
+      preload="auto">
+    </video>
+
+    <div class="welcome-info">
+      <h2>ようこそ</h2>
+      <p>Welcome to Komorebi Space Belitang</p>
+    </div>
+
+    <div class="welcome-timer">
+      <div class="welcome-progress" id="welcomeProgress"></div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- LOGIN -->
+
+<main class="container">
+<div class="content">
+
+  <div class="logo-area">
+    <div class="logo">
+
+      <img id="logoImage" src="logo.png"
+        alt="Logo"
+        onerror="this.style.display='none';document.getElementById('logoFallback').style.display='block'">
+
+      <span id="logoFallback" style="display:none">印</span>
+
+    </div>
+  </div>
+
+  <h1>
+    <ruby>ログイン<rt>ろぐいん</rt></ruby>
+  </h1>
+
+  <div class="subtitle">
+    <span class="jp">
+      <ruby>会員<rt>かいいん</rt></ruby>ページへようこそ
+    </span>
+    <span class="idn">Selamat Datang Bolo</span>
+  </div>
+
+  <form id="loginForm">
+
+    <!-- USERNAME -->
+
+    <div class="field">
+
+      <label for="username">
+        <span class="jp">ユーザー名</span>
+        <span class="idn">Nama pengguna</span>
+      </label>
+
+      <div class="input-wrap">
+
+        <svg viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.7">
+          <circle cx="12" cy="8" r="3.5"/>
+          <path d="M4.5 20c.8-4 3.3-6 7.5-6s6.7 2 7.5 6"/>
+        </svg>
+
+        <input
+          id="username"
+          type="text"
+          placeholder="Username"
+          autocomplete="username"
+          required>
+
+      </div>
+    </div>
+
+
+    <!-- PASSWORD -->
+
+    <div class="field">
+
+      <label for="password">
+        <span class="jp">パスワード</span>
+        <span class="idn">Kata sandi</span>
+      </label>
+
+      <div class="input-wrap">
+
+        <svg viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1.7">
+          <rect x="4.5" y="10" width="15" height="11" rx="2"/>
+          <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+        </svg>
+
+        <input
+          id="password"
+          type="password"
+          placeholder="Password"
+          autocomplete="current-password"
+          required>
+
+        <button class="eye" type="button" id="togglePassword">
+          ◉
+        </button>
+
+      </div>
+    </div>
+
+    <div class="info">
+      <ruby>関係者<rt>かんけいしゃ</rt></ruby>専用 · Khusus anggota
+    </div>
+
+    <button class="login-btn" type="submit" id="loginButton">
+
+      <span class="jp">
+        <ruby>ログイン<rt>ろぐいん</rt></ruby> →
+      </span>
+
+      <span class="idn">Masuk ke akun</span>
+
+    </button>
+
+    <div class="message" id="message"></div>
+
+  </form>
+
+  <div class="footer">
+    Komorebi Space Belitang MEMBERS ONLY
+
+    <small>
+      ご利用ありがとうございます · Terima kasih telah berkunjung
+    </small>
+  </div>
+
+</div>
+</main>
+
+
+<!-- AUDIO -->
+
+<audio id="wrongSound" preload="auto"></audio>
+
+
+<script>
+
+/* ==========================================
+   WEBSITE CONFIGURATION
+========================================== */
+
+const CONFIG = {
+
+  siteName: "MEMBER ACCESS",
+
+  logo: "logo.png",
+
+  fallbackLogo: "印",
+
+  wrongPasswordSound: "wrong-password.mp3",
+
+  soundVolume: 0.75,
+
+  welcomeVideo: "gaeul.mp4",
+
+  welcomeDuration: 10,
+
+  users: [
+
+    {
+      username: "irham_eiko",
+      password: "irhamsjsksjsgsgjd",
+      redirect: "https://example.com/irham"
+    },
+
+    {
+      username: "Aji",
+      password: "ajisujsbvsgsgege",
+      redirect: "https://example.com/user2"
+    },
+
+    {
+      username: "Arib",
+      password: "aripsknsdbbdhfh",
+      redirect: "sugeng.html"
+    },
+
+    {
+      username: "Putri",
+      password: "putrinsbsbdbdhd",
+      redirect: "https://example.com/user4"
+    }
+
+  ]
+
+};
+
+
+/* ==========================================
+   INITIALIZATION
+========================================== */
+
+document.title = `ログイン | ${CONFIG.siteName}`;
+
+const usernameInput = document.getElementById("username");
+const passwordInput = document.getElementById("password");
+
+const loginForm = document.getElementById("loginForm");
+const loginButton = document.getElementById("loginButton");
+const message = document.getElementById("message");
+
+const wrongSound = document.getElementById("wrongSound");
+
+const welcomeOverlay = document.getElementById("welcomeOverlay");
+const welcomeVideo = document.getElementById("welcomeVideo");
+const welcomeClose = document.getElementById("welcomeClose");
+const welcomeProgress = document.getElementById("welcomeProgress");
+
+
+/* LOGO */
+
+document.getElementById("logoImage").src = CONFIG.logo;
+
+document.getElementById("logoFallback").textContent =
+  CONFIG.fallbackLogo;
+
+
+/* SOUND */
+
+wrongSound.src = CONFIG.wrongPasswordSound;
+
+wrongSound.volume = CONFIG.soundVolume;
+
+
+/* ==========================================
+   WELCOME VIDEO
+========================================== */
+
+welcomeVideo.src = CONFIG.welcomeVideo;
+
+welcomeVideo.muted = true;
+
+welcomeVideo.playsInline = true;
+
+let welcomeTimer = null;
+let welcomeClosed = false;
+
+function closeWelcome() {
+
+  if (welcomeClosed) return;
+
+  welcomeClosed = true;
+
+  clearTimeout(welcomeTimer);
+
+  welcomeOverlay.classList.remove("active");
+
+  welcomeVideo.pause();
+
+  setTimeout(() => {
+    welcomeOverlay.style.display = "none";
+  }, 450);
+
+}
+
+function startWelcome() {
+
+  welcomeVideo.play().catch(error => {
+    console.log("Autoplay tidak tersedia:", error);
+  });
+
+  welcomeTimer = setTimeout(() => {
+    closeWelcome();
+  }, CONFIG.welcomeDuration * 1000);
+
+  welcomeProgress.style.transition =
+    `transform ${CONFIG.welcomeDuration}s linear`;
+
+  requestAnimationFrame(() => {
+    welcomeProgress.style.transform = "scaleX(0)";
+  });
+
+}
+
+welcomeClose.addEventListener("click", closeWelcome);
+
+startWelcome();
+
+
+/* ==========================================
+   WRONG PASSWORD SOUND
+========================================== */
+
+function playWrongSound() {
+
+  wrongSound.pause();
+
+  wrongSound.currentTime = 0;
+
+  wrongSound.volume = Math.min(
+    1,
+    Math.max(0, CONFIG.soundVolume)
+  );
+
+  wrongSound.play().catch(error => {
+    console.log("Audio playback blocked:", error);
+  });
+
+}
+
+
+/* ==========================================
+   MESSAGE
+========================================== */
+
+function showMessage(text, type) {
+
+  message.textContent = text;
+
+  message.className = "message " + type;
+
+}
+
+
+/* ==========================================
+   SHOW / HIDE PASSWORD
+========================================== */
+
+document.getElementById("togglePassword")
+.addEventListener("click", () => {
+
+  passwordInput.type =
+    passwordInput.type === "password"
+      ? "text"
+      : "password";
+
+});
+
+
+/* ==========================================
+   LOGIN SYSTEM
+========================================== */
+
+loginForm.addEventListener("submit", function(event) {
+
+  event.preventDefault();
+
+  const username = usernameInput.value.trim();
+
+  const password = passwordInput.value;
+
+  const user = CONFIG.users.find(account => {
+
+    return (
+      account.username === username &&
+      account.password === password
+    );
+
+  });
+
+
+  /* LOGIN SUCCESS */
+
+  if (user) {
+
+    showMessage(
+      "ログインしました · Login berhasil! Mengalihkan halaman...",
+      "success"
+    );
+
+    loginButton.disabled = true;
+
+    setTimeout(() => {
+
+      if (
+        user.redirect &&
+        !user.redirect.includes("example.com/")
+      ) {
+
+        window.location.href = user.redirect;
+
+      } else {
+
+        showMessage("Akun benar.", "success");
+
+        loginButton.disabled = false;
+
+      }
+
+    }, 800);
+
+    return;
+
+  }
+
+
+  /* LOGIN FAILED - IMMEDIATE SOUND */
+
+  showMessage(
+    "ログインに失敗しました · Username atau password salah.",
+    "error"
+  );
+
+  playWrongSound();
+
+  passwordInput.value = "";
+
+  passwordInput.focus();
+
+});
+
+</script>
+
+</body>
+</html>

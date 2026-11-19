@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080808"><meta name="description" content="NIHON CINEMA — Japanese language quiz collection">
+<title>KomorebiSpace</title><link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="navbar"><div class="nav-container">
+  <a href="#home" class="logo" aria-label="Nihon Cinema">KOMOREBI'S<span>BELITANG</span></a>
+  <div class="hero-switch" aria-label="Background selector">
+    <button class="hero-icon-btn active" id="imageBtn" type="button" aria-label="Gunakan background gambar" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="4" width="13" height="15" rx="1" transform="rotate(-9 5 4)" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8v8H8z M9 14l2-2 2 2 1-1 2 2" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></button>
+    <button class="hero-icon-btn" id="videoBtn" type="button" aria-label="Gunakan background video" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6" width="16" height="12" rx="1" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m10 9 5 3-5 3z" fill="currentColor"/></svg></button>
+  </div>
+</div></header>
+<main>
+<section class="hero" id="home"><div class="hero-image active" id="heroImage"></div>
+<video class="hero-video" id="heroVideo" muted loop playsinline preload="none"><source src="assets/videos/hero.mp4" type="video/mp4"></video><div class="hero-overlay"></div>
+<div class="hero-container"><div class="hero-content"><span class="eyebrow">HALLO ARIB LETS GO LATIHAN</span>
+<h1>Stay MBG<br>Stay Benkyou<br class="mobile-break"> Minna.</h1>
+<p>Jangan lupa semangat belajar man!.</p>
+</div></div></section>
+<section class="quiz-section" id="japanese-quiz"><div class="quiz-heading"><span class="section-kicker">LEARN JAPANESE</span><h2>Japanese Quiz<span>.</span></h2><p>Pilih kategori dan uji pemahaman bahasa Jepangmu.</p></div>
+<div class="quiz-layout"><aside class="category-panel"><div class="panel-label">QUESTION BANK</div><div id="categoryList" class="category-list"><p class="loading">Memuat kategori...</p></div></aside>
+<section class="quiz-panel" aria-live="polite" id="quizPanel"><div class="empty-state"><span class="empty-mark">日</span><h3>Memuat bank soal</h3><p>Soal akan ditampilkan otomatis dari banksoal.json.</p></div></section></div>
+<section class="music-section" id="music-player"><div class="music-heading"><span class="section-kicker">LISTEN WHILE YOU STUDY</span><h2>Study Playlist<span>.</span></h2><p>Musik pilihan untuk menemani latihan bahasa Jepang.</p></div><div class="music-player"><div class="music-art" aria-hidden="true">♫</div><div class="music-main"><div class="music-meta"><div><span class="music-label">NOW PLAYING</span><h3 id="trackTitle">Belum ada lagu</h3><p id="trackArtist">Tambahkan lagu melalui source code</p></div><span class="music-index" id="trackIndex">00 / 00</span></div><audio id="studyAudio" preload="metadata"></audio><div class="music-progress-row"><span id="currentTime">0:00</span><input id="musicSeek" type="range" min="0" max="100" value="0" aria-label="Posisi lagu"><span id="duration">0:00</span></div><div class="music-controls"><button type="button" id="prevTrack" aria-label="Lagu sebelumnya" disabled>⏮</button><button type="button" id="playTrack" class="play-track" aria-label="Putar lagu" disabled>▶</button><button type="button" id="nextTrack" aria-label="Lagu berikutnya" disabled>⏭</button><label class="volume-control">VOL <input id="musicVolume" type="range" min="0" max="1" step="0.05" value="0.75" aria-label="Volume"></label></div><p class="music-hint" id="musicHint">Atur daftar lagu di <code>js/music.js</code> dan letakkan file audio di folder <code>assets/music/</code>.</p></div></div></section>
+<footer class="quiz-footer"><span>KOMOREBI'S BELITANG</span><span>STUDY • PRACTICE • REPEAT</span></footer>
+</section>
+</main><div class="welcome-overlay" id="welcomePopup" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle"><div class="welcome-card"><span class="welcome-kanji">ようこそ</span><p class="welcome-small">WELCOME TO KOMOREBI'S BELITANG</p><h2 id="welcomeTitle">Selamat datang, <span>Arib!</span></h2><p class="welcome-message">がんばってね。</p><span class="welcome-translation">Ganbatte ne — Semangat, ya!</span><div class="welcome-timer"><span></span></div></div></div><div class="sakura-layer" id="sakuraLayer" aria-hidden="true"></div><script src="js/hero.js"></script><script src="js/quiz.js"></script><script src="js/music.js"></script><script src="js/welcome.js"></script>
+</body></html>
